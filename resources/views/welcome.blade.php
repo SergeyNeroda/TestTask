@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>ITLabTestTask</title>
+@section('content')
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="css/app.css">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Articles list</div>
 
-    </head>
-    <body>
-        <div class="content" id="app">
-
-            <example-component></example-component>
-        
+                <div class="card-body">
+                    I'm an example article.
+                </div>
+            </div>
         </div>
+    </div>
+</div>
 
-        {{-- Scripts --}}
-        <script src="js/app.js"></script>
-
-    </body>
-</html>
+@endsection

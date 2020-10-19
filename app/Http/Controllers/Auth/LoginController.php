@@ -21,6 +21,11 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    //Перевизначаю логін через нікнейм замість іменйлу
+    public function username()
+    {
+        return 'nickname';
+    }
     /**
      * Where to redirect users after login.
      *
