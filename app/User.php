@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
+    protected $fillable = [
+        'nickname','surname','avatar', 'phone', 'sex', 'show_phone',
+    ];
+    
     /**
      * articles - статьи принадлежащие пользователю
      * article_user - два названия взаимосвязанных моделей в алфавитном порядке
