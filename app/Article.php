@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Article extends Model
 {
+    use SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -14,6 +17,8 @@ class Article extends Model
     protected $fillable = [
         'text', 
     ];
+
+    protected $dates=['deleted_at'];
 
     /**
      * users - пользователи принадлежащие статьям
