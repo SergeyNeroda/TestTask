@@ -58,7 +58,22 @@ class RegisterController extends Controller
             'show_phone' =>	['required'],	
             'password' => ['required', 'string', 'min:8', 'confirmed'],	
             'email' => ['required', 'string', 'email', 'max:255'],
-            // 'name' => ['required', 'string', 'max:255'],
+        ],[
+            'nickname.required' => 'Поле Нікнейм обов\'язкове для заповнення',
+            'nickname.min' => 'Поле Нікнейм має бути більше 8 символів',
+            'nickname.unique' => 'Поле Нікнейм не унікальне',
+
+            'surname.required' => 'Поле Прізвище обов\'язкове для заповнення',
+
+            'avatar.required' => 'Поле Аватар обов\'язкове для заповнення',
+
+            'phone.required' => 'Поле Телефон обов\'язкове для заповнення',
+
+            'sex.required' => 'Поле Стать обов\'язкове для заповнення',
+
+            'show_phone.required' => 'Поле Показ телефону обов\'язкове для заповнення',
+
+            'email.required' => 'Поле Імейл обов\'язкове для заповнення',
         ]);
     }
 
@@ -71,7 +86,6 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            //'name' => $data['name'],
             'nickname' => $data['nickname'],	
             'surname' => $data['surname'],	
             'avatar' =>	$data['avatar'],	
