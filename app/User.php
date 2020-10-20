@@ -21,7 +21,8 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be hidden for arrays.
-     *
+     * Не должны включаться в массив и JSON-представление модели
+     * 
      * @var array
      */
     protected $hidden = [

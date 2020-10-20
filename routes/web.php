@@ -31,9 +31,9 @@ Route::group(['middleware' => ['web']], function () {
         
         Route::get('/account', ['uses'=>'UserController@details', 'as'=>'users.details']);
         Route::get('/account/edit', ['uses'=>'UserController@edit', 'as'=>'users.edit']);
-        Route::post('/account/edit', ['uses'=>'UserController@update', 'as'=>'users.update']);
-        Route::get('/account/password', ['uses'=>'UserController@editPassword', 'as'=>'users.edit_password']);
-        Route::post('/account/password', ['uses'=>'UserController@updatePassword', 'as'=>'users.update_password']);
+        Route::patch('/account/edit/{id}', ['uses'=>'UserController@update', 'as'=>'users.update']);
+        // Route::get('/account/password', ['uses'=>'UserController@editPassword', 'as'=>'users.edit_password']);
+        // Route::post('/account/password', ['uses'=>'UserController@updatePassword', 'as'=>'users.update_password']);
 
     });
    

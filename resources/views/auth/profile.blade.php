@@ -26,6 +26,11 @@
                     <p>
                         Show Phone: {{$auth_user->show_phone}}
                     <p/>
+                    @if(session()->get('success'))
+                          <div class="alert alert-success">
+                              {{ session()->get('success') }}
+                          </div>
+                    @endif
                 </div>
             </div>
 
