@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes([
     'register' => true,
     'verify' => false,
@@ -25,6 +20,10 @@ Auth::routes([
 ]);
 
 Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
     Route::group(['middleware' => ['auth']], function () {
 
@@ -37,6 +36,5 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('/account/password', ['uses'=>'UserController@updatePassword', 'as'=>'users.update_password']);
 
     });
-
-    
+   
 });
