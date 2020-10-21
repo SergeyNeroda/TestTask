@@ -15,7 +15,7 @@ class Article extends Model
      * @var array
      */
     protected $fillable = [
-        'text', 
+        'title', 'text',
     ];
 
     protected $dates=['deleted_at'];

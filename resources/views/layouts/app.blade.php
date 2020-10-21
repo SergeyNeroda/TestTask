@@ -36,8 +36,9 @@
                         <a class="nav-link {{ request()->is('account') ? 'active' : '' }}" href="{{ url('/account') }}">
                             Аккаунт
                         </a>
-                        <a class="nav-link {{ request()->is('account/edit') ? 'active' : '' }}" href="{{ url('/account/edit') }}">
-                            Редагувати Аккаунт
+                        
+                        <a class="nav-link {{ request()->is('articles') ? 'active' : '' }}" href="{{ url('/articles') }}">
+                            Статті
                         </a>
                     @endguest
 

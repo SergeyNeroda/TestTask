@@ -14,7 +14,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::all();
+        //dd($articles);
+        return view('auth.articles.index', compact('articles'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('auth.articles.create');
     }
 
     /**
@@ -35,7 +37,18 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>['required','min:8'],
+            'text'=>['required','min:8'],
+        ]);
+
+        $article = new Article([
+            'title' => $request->get('title'),
+            'text' => $request->get('text'),
+        ]);
+        $article->save();
+
+        return redirect()->route('articles')->with('success', 'Статтю успішно додано!');
     }
 
     /**
@@ -57,7 +70,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        // return view('auth.articles.edit');
     }
 
     /**
