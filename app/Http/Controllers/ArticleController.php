@@ -57,9 +57,10 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show($id)
     {
-        //
+        $article = Article::find($id);
+        return view('auth.articles.show', compact('article'));
     }
 
     /**
@@ -68,9 +69,10 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit($id)
     {
-        // return view('auth.articles.edit');
+        $article = Article::find($id);
+        return view('auth.articles.edit', compact('article'));
     }
 
     /**
@@ -80,9 +82,21 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title'=>['required','min:8'],
+            'text'=>['required','min:8'],
+        ]);
+
+        $article = Article::find($id);
+
+        $article->title =  $request->get('title');
+        $article->text = $request->get('text');
+        
+        $article->save();
+
+        return redirect()->route('articles')->with('success', 'Статтю редаговано!');
     }
 
     /**
@@ -91,8 +105,11 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy($id)
     {
-        //
+        $article = Article::find($id);
+        $article->delete();
+
+        return redirect()->route('articles')->with('success', 'Статтю видалено!');
     }
 }

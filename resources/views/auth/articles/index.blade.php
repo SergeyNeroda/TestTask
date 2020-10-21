@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center ">
                         <h5 class="card-title mb-0">Список статтей</h5>
-                        <a href="{{ route('articles.create') }}" class="btn btn-primary">Додати</a>
+                        <a href="{{ route('articles.create') }}" class="btn btn-success">Додати</a>
                     </div>
                 </div>
 
@@ -27,10 +27,29 @@
                         <div class="card-body">
                             <div>{{$article->text}}</div>
                         </div>
+                        <div class="card-footer">
+                            <div class="d-flex flex-row-reverse">
+                                <div class="card ml-2">
+                                    <a href="{{ route('articles.edit',$article->id) }}" class="btn btn-primary text-white">Редагувати</a>
+                                </div>
+                                <div class="card ml-2">
+                                    <form action="{{ route('articles.destroy', $article->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Видалити</button>
+                                    </form>
+                                </div>
+                                <div class="card ml-2">
+                                    <a href="{{ route('articles.show',$article->id) }}" class="btn btn-info text-white">Переглянути</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    {{--  <br/>  --}}
+
                     @empty
-                        <div>Статті відсутні</div>
+                        <div class="alert alert-warning">
+                            Статті відсутні
+                        </div>
                     @endforelse
                 </div>
                
