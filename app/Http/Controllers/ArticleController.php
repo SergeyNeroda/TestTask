@@ -15,7 +15,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::orderBy('created_at', 'desc')->get();
         $auth_user = Auth::user();
         //dd($articles);
         return view('auth.articles.index', ['articles'=>$articles, 'auth_user'=>$auth_user]);
@@ -48,7 +48,9 @@ class ArticleController extends Controller
             'title' => $request->get('title'),
             'text' => $request->get('text'),
         ]);
-        $article->save();
+
+        $auth_user = Auth::user();
+        $auth_user->articles()->save($article);
 
         return redirect()->route('articles')->with('success', 'Статтю успішно додано!');
     }
