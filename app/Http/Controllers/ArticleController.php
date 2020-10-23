@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use Auth;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -15,8 +16,9 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
+        $auth_user = Auth::user();
         //dd($articles);
-        return view('auth.articles.index', compact('articles'));
+        return view('auth.articles.index', ['articles'=>$articles, 'auth_user'=>$auth_user]);
     }
 
     /**
@@ -72,6 +74,9 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
+        if (!Auth::user() || !$article->isAuthor(Auth::user())) {
+            return abort('404');
+        }
         return view('auth.articles.edit', compact('article'));
     }
 
@@ -108,8 +113,14 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         $article = Article::find($id);
+        if (!Auth::user() || !$article->isAuthor(Auth::user())) {
+            return abort('404');
+        }
+
         $article->delete();
 
         return redirect()->route('articles')->with('success', 'Статтю видалено!');
     }
+
+    
 }

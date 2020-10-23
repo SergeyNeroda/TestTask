@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Auth;
 
 class Article extends Model
 {
@@ -28,5 +29,15 @@ class Article extends Model
     public function users()
     {
         return $this->belongsToMany('App\User', 'article_user')->withTimestamps();
+    }
+
+    public function isAuthor($user)
+    {
+        $auth_user = Auth::user();
+        if ($this->users()->find($user->id)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

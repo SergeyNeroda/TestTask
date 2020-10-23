@@ -29,19 +29,24 @@
                         </div>
                         <div class="card-footer">
                             <div class="d-flex flex-row-reverse">
-                                <div class="card ml-2">
-                                    <a href="{{ route('articles.edit',$article->id) }}" class="btn btn-primary text-white">Редагувати</a>
-                                </div>
-                                <div class="card ml-2">
-                                    <form action="{{ route('articles.destroy', $article->id)}}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Видалити</button>
-                                    </form>
-                                </div>
+                                @if ($auth_user && $article->isAuthor($auth_user))
+
+                                    <div class="card ml-2">
+                                        <a href="{{ route('articles.edit',$article->id) }}" class="btn btn-primary text-white">Редагувати</a>
+                                    </div>
+                                    <div class="card ml-2">
+                                        <form action="{{ route('articles.destroy', $article->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" type="submit">Видалити</button>
+                                        </form>
+                                    </div>
+                                 
+                                @endif
                                 <div class="card ml-2">
                                     <a href="{{ route('articles.show',$article->id) }}" class="btn btn-info text-white">Переглянути</a>
                                 </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -51,6 +56,8 @@
                             Статті відсутні
                         </div>
                     @endforelse
+
+                    
                 </div>
                
             </div>
