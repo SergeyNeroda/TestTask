@@ -43,6 +43,9 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/articles/show/{id}', ['uses'=>'ArticleController@show','as'=>'articles.show']);
         Route::patch('/articles/update/{id}', ['uses'=>'ArticleController@update','as'=>'articles.update']);
         Route::delete('/articles/delete/{id}', ['uses'=>'ArticleController@destroy','as'=>'articles.destroy']);
+        Route::get('/articles/softdeleted',['uses'=>'ArticleController@softDeleted','as'=>'articles.softdeleted']);
+        Route::patch('/articles/restore/{id}',['uses'=>'ArticleController@restore','as'=>'articles.restore']);
+        Route::delete('articles/permamentdelete/{id}',['uses'=>'ArticleController@permanentDelete','as'=>'articles.permamentdelete']);
     });
    
 });

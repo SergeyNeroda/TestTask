@@ -8,7 +8,17 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center ">
                         <h5 class="card-title mb-0">Список статтей</h5>
-                        <a href="{{ route('articles.create') }}" class="btn btn-success">Додати</a>
+                        <div class="d-flex flex-row-reverse">
+                            <div class="card ml-2">
+                                <a href="{{ route('articles.softdeleted') }}" class="btn btn-secondary">Авторські статті</a>
+                            </div>
+                            <div class="card ml-2">
+                                <a href="{{ route('articles.softdeleted') }}" class="btn btn-primary">Видалені статті</a>
+                            </div>
+                            <div class="card ml-2">
+                                <a href="{{ route('articles.create') }}" class="btn btn-success">Додати</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

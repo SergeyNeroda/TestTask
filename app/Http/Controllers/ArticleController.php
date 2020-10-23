@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,30 @@ class ArticleController extends Controller
         $auth_user = Auth::user();
         //dd($articles);
         return view('auth.articles.index', ['articles'=>$articles, 'auth_user'=>$auth_user]);
+    }
+
+    public function softDeleted()
+    {
+        $auth_user = Auth::user();
+        $articles = $auth_user->articles()->onlyTrashed()->where('user_id', $auth_user->id)->orderBy('deleted_at', 'desc')->get();
+
+        return view('auth.articles.trash', ['articles'=>$articles, 'auth_user'=>$auth_user]);
+    }
+
+    public function restore($id)
+    {
+        $article = Article::onlyTrashed()->find($id);
+        $article->restore();
+
+        return redirect()->route('articles')->with('success', 'Статтю успішно відновлено!');   
+    }
+
+    public function permanentDelete($id)
+    {
+        $article = Article::onlyTrashed()->find($id);
+        $article->forceDelete();
+        
+        return redirect()->route('articles.softdeleted')->with('success', 'Статтю видалено остаточно!');
     }
 
     /**
