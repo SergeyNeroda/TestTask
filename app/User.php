@@ -47,4 +47,5 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Article', 'article_user')->withTimestamps();
     }
+
 }

@@ -21,9 +21,7 @@ Auth::routes([
 
 Route::group(['middleware' => ['web']], function () {
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', ['uses'=>'HomeController@index', 'as'=>'home.index']);
 
     Route::group(['middleware' => ['auth']], function () {
 
@@ -31,11 +29,15 @@ Route::group(['middleware' => ['web']], function () {
         
         Route::get('/account', ['uses'=>'UserController@details', 'as'=>'users.details']);
         Route::get('/account/edit', ['uses'=>'UserController@edit', 'as'=>'users.edit']);
+        Route::get('/account/password', ['uses'=>'UserController@editPassword', 'as'=>'users.edit_password']);
+        Route::put('/account/password-update/{id}', ['uses'=>'UserController@updatePassword', 'as'=>'users.update_password']);
+
         Route::patch('/account/update/{id}', ['uses'=>'UserController@update', 'as'=>'users.update']);
         // Route::get('/account/password', ['uses'=>'UserController@editPassword', 'as'=>'users.edit_password']);
         // Route::post('/account/password', ['uses'=>'UserController@updatePassword', 'as'=>'users.update_password']);
 
         //Articles
+        Route::get('/articles/author', ['uses'=>'ArticleController@userArticles', 'as'=>'articles.author']);
         Route::get('/articles', ['uses'=>'ArticleController@index','as'=>'articles']);
         Route::get('/articles/create', ['uses'=>'ArticleController@create','as'=>'articles.create']);
         Route::post('/articles/store', ['uses'=>'ArticleController@store','as'=>'articles.store']);
