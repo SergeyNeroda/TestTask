@@ -1,33 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center ">
-                        <h5 class="card-title mb-0">Список статтей</h5>
-                        <div class="d-flex flex-row-reverse">
-                            <div class="card ml-2">
-                                <a href="{{ route('articles.author') }}" class="btn btn-secondary">Авторські статті</a>
-                            </div>
-                            <div class="card ml-2">
-                                <a href="{{ route('articles.softdeleted') }}" class="btn btn-secondary">Видалені статті</a>
-                            </div>
-                            <div class="card ml-2">
-                                <a href="{{ route('articles.create') }}" class="btn btn-secondary">Додати</a>
-                            </div>
-                        </div>
+                        <h5 class="card-title mb-0">Авторські статті</h5>
+                        <a href="{{ route('articles') }}" class="btn btn-success">Список статтей</a>
+ 
                     </div>
                 </div>
 
                 <div class="card-body">
-                    @if(session()->get('success'))
-                            <div class="alert alert-success">
-                                {{ session()->get('success') }}
-                            </div>
-                    @endif
 
                     @forelse ($articles as $article)
                     <div class="card mb-3">
@@ -74,4 +61,5 @@
         </div>
     </div>
 </div>
+
 @endsection

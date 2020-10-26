@@ -16,10 +16,16 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::orderBy('created_at', 'desc')->get();
         $auth_user = Auth::user();
-        //dd($articles);
+        $articles = Article::orderBy('created_at', 'desc')->get();        
         return view('auth.articles.index', ['articles'=>$articles, 'auth_user'=>$auth_user]);
+    }
+
+    public function userArticles ()
+    {
+        $auth_user = Auth::user();
+        $articles = $auth_user->articles()->where('user_id', $auth_user->id)->orderBy('deleted_at', 'desc')->get();
+        return view('auth.articles.authorArticles', ['articles' => $articles, 'auth_user' => $auth_user]);
     }
 
     public function softDeleted()
