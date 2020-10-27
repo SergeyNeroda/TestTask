@@ -18,6 +18,16 @@
                                 {{ session()->get('success') }}
                             </div>
                     @endif
+                    @if(session()->get('danger'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('danger') }}
+                            </div>
+                    @endif
+                    @if($error)
+                            <div class="alert alert-danger">
+                                {{ $error }}
+                            </div>
+                    @endif
 
                     @forelse ($articles as $article)
                     <div class="card mb-3">

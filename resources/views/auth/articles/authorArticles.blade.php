@@ -15,7 +15,11 @@
                 </div>
 
                 <div class="card-body">
-
+                    @if($error)
+                            <div class="alert alert-danger">
+                                {{ $error }}
+                            </div>
+                    @endif
                     @forelse ($articles as $article)
                     <div class="card mb-3">
                         <div class="card-header">
@@ -53,6 +57,7 @@
                             Статті відсутні
                         </div>
                     @endforelse
+                    
 
                     
                 </div>

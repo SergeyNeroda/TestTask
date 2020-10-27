@@ -45,7 +45,6 @@
                             <div class="col-md-6">
                                 
                                 <input id="avatar" class=" @error('avatar') is-invalid @enderror" value="{{ old('avatar') }}" required type="file"  name="avatar">
-                            
                                 @error('avatar')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

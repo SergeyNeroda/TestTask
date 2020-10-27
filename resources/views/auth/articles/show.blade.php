@@ -5,14 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Article Details Page') }}</div>
+                <div class="card-header">{{ __('Сторінка перегляду статті') }}</div>
 
                 <div class="card-body">
                     <p>
-                        Title: {{$article->title}}
+                        Заголовок: {{$article->title}}
                     <p/>
                     <p>
-                        Text: {{$article->text}}
+                        Текст: {{$article->text}}
                     <p/>
                           
                 </div>

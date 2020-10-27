@@ -55,23 +55,29 @@ class RegisterController extends Controller
             'nickname' => [
                 'required', 
                 'string', 
-                'min:8', 
+                'min:8',
+                'max:40', 
                 'unique:users', 
                 'alpha_dash'
             ],	
             'surname' => [
                 'required',
                 'string',
-                'alpha_dash'
+                'min:2',
+                'max:50',
+                'alpha'
             ],	
             'avatar' => [
                 'image',
                 'required',
                 'mimes:jpeg,png',
                 'dimensions:min_width=300,max_width=2000,min_height=300,max_height=2000',
+                'max:4096'
             ],
             'phone'	=> [
                 'required',
+                'min:8',
+                'digits_between:5,16',
                 'numeric'
             ],	
             'sex' => [
@@ -85,45 +91,18 @@ class RegisterController extends Controller
             'password' => [
                 'required', 
                 'string', 
-                'min:8', 
+                'min:8',
+                'max:50', 
                 'confirmed'
             ],	
             'email' => [
                 'required',
                 'unique:users', 
                 'string', 
-                'email', 
+                'email',
+                'min:3', 
                 'max:255'
             ],
-        ],[
-            'nickname.required' => 'Поле Нікнейм обов\'язкове для заповнення',
-            'nickname.min' => 'Поле Нікнейм має бути більше 8 символів',
-            'nickname.unique' => 'Поле Нікнейм не унікальне',
-            'nickname.alpha_dash' => 'Нікнейм може містити лише літери, цифри, тире та підкреслення',
-
-            'surname.required' => 'Поле Прізвище обов\'язкове для заповнення',
-            'surname.alpha_dash' => 'Прізвище може містити лише літери, цифри, тире та підкреслення',
-
-            'avatar.required' => 'Поле Аватар обов\'язкове для заповнення',
-            'avatar.image' => 'Поле Аватар має бути картинкою формату jpeg або png' ,
-            'avatar.dimensions' => 'Зображення має бути не більше 2000х2000 пікселів та не меньше 300х300 пікселів' ,
-
-            'phone.required' => 'Поле Телефон обов\'язкове для заповнення',
-            'phone.numeric' => 'Поле Телефон - лише числові символи',
-
-            'sex.required' => 'Поле Стать обов\'язкове для заповнення',
-            'sex.in' => 'Поле Стать може мати значення Чоловік або Жінка',
-
-            'show_phone.required' => 'Поле Показ телефону обов\'язкове для заповнення',
-            'show_phone.boolean' => 'Поле Показ телефону має бути істинним або хибним',
-
-            'email.required' => 'Поле Імейл обов\'язкове для заповнення',
-            'email.unique' => 'Користувач з таким імейлом вже існує',
-
-            'password.required'=> 'Поле Пароль обов\'язкове для заповнення', 
-            'password.string'=> 'Поле Пароль повинне бути рядком', 
-            'password.min'=> 'Поле Пароль повинне мати мінімум 8 символів', 
-            'password.confirmed'=> 'Паролі не збігаються',
         ]);
     }
 

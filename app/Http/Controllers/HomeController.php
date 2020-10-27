@@ -9,7 +9,14 @@ class HomeController extends Controller
 {
     public function index ()
     {
-        $articles = Article::orderBy('created_at', 'desc')->get();
-        return view('home',['articles' => $articles]); 
+        try {
+            $articles = Article::orderBy('created_at', 'desc')->get();
+            return view('home',['articles' => $articles,'error'=>'']);
+        } catch (\Exception $exception) {
+            if($exception instanceof \Illuminate\Database\QueryException) {
+                return view('home', ['articles'=>[], 'error'=>'Помилка в базі данних. Неможливо відобразити статті']);
+            } 
+            return view('home', ['articles'=>$articles, 'error'=>'Помилка показу статтей']);
+        }  
     }
 }

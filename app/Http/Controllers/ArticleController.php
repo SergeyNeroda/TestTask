@@ -17,39 +17,68 @@ class ArticleController extends Controller
     public function index()
     {
         $auth_user = Auth::user();
-        $articles = Article::orderBy('created_at', 'desc')->get();        
-        return view('auth.articles.index', ['articles'=>$articles, 'auth_user'=>$auth_user]);
+
+        //Error handing: Get Articles
+        try {
+            $articles = Article::orderBy('created_at', 'desc')->get();
+            return view('auth.articles.index', ['articles'=>$articles, 'auth_user'=>$auth_user,'error'=>'']);
+        } catch (\Exception $exception) {
+            if($exception instanceof \Illuminate\Database\QueryException) {
+                return view('auth.articles.index', ['articles'=>[], 'auth_user'=>$auth_user, 'error'=>'Помилка в базі данних. Неможливо відобразити статті']);
+            } 
+            return view('auth.articles.index', ['articles'=>$articles, 'auth_user'=>$auth_user,'error'=>'Помилка показу статтей']);
+        }        
     }
 
     public function userArticles ()
     {
         $auth_user = Auth::user();
-        $articles = $auth_user->articles()->where('user_id', $auth_user->id)->orderBy('deleted_at', 'desc')->get();
-        return view('auth.articles.authorArticles', ['articles' => $articles, 'auth_user' => $auth_user]);
+
+        //Error handing: Get User Articles
+        try {
+            $articles = $auth_user->articles()->where('user_id', $auth_user->id)->orderBy('deleted_at', 'desc')->get();
+            return view('auth.articles.authorArticles', ['articles' => $articles, 'auth_user' => $auth_user,'error'=>'']);
+        } catch (\Exception $exception) {
+            if($exception instanceof \Illuminate\Database\QueryException) {
+                return view('auth.articles.authorArticles', ['articles'=>[], 'auth_user'=>$auth_user, 'error'=>'Помилка в базі данних. Неможливо відобразити статті']);
+            } 
+            return view('auth.articles.authorArticles', ['articles'=>$articles, 'auth_user'=>$auth_user,'error'=>'Помилка показу статтей']);
+        }  
     }
 
     public function softDeleted()
     {
         $auth_user = Auth::user();
-        $articles = $auth_user->articles()->onlyTrashed()->where('user_id', $auth_user->id)->orderBy('deleted_at', 'desc')->get();
-
-        return view('auth.articles.trash', ['articles'=>$articles, 'auth_user'=>$auth_user]);
+        
+        try {
+            $articles = $auth_user->articles()->onlyTrashed()->where('user_id', $auth_user->id)->orderBy('deleted_at', 'desc')->get();
+            return view('auth.articles.trash', ['articles'=>$articles, 'auth_user'=>$auth_user,'error'=>'']);
+        } catch (\Exception $exception) {
+            if($exception instanceof \Illuminate\Database\QueryException) {
+                return view('auth.articles.trash', ['articles'=>[], 'auth_user'=>$auth_user, 'error'=>'Помилка в базі данних. Неможливо відобразити статті']);
+            } 
+            return view('auth.articles.trash', ['articles'=>$articles, 'auth_user'=>$auth_user,'error'=>'Помилка показу статтей']);
+        }  
     }
 
     public function restore($id)
     {
-        $article = Article::onlyTrashed()->find($id);
-        $article->restore();
-
-        return redirect()->route('articles')->with('success', 'Статтю успішно відновлено!');   
+        $article = Article::onlyTrashed()->findOrFail($id);
+        
+        if($article->restore()) {
+            return redirect()->route('articles')->with('success', 'Статтю успішно відновлено!');
+        }  
+        return redirect()->route('articles.softDelete')->with('danger', 'Помилка відновлення статті!'); 
     }
 
     public function permanentDelete($id)
     {
-        $article = Article::onlyTrashed()->find($id);
-        $article->forceDelete();
+        $article = Article::onlyTrashed()->findOrFail($id);
         
-        return redirect()->route('articles.softdeleted')->with('success', 'Статтю видалено остаточно!');
+        if($article->forceDelete()){
+            return redirect()->route('articles.softdeleted')->with('success', 'Статтю видалено остаточно!');
+        }
+        return redirect()->route('articles.softdeleted')->with('danger', 'Статтю не видалено остаточно!');
     }
 
     /**
@@ -70,20 +99,28 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title'=>['required','min:8'],
-            'text'=>['required','min:8'],
-        ]);
+            $request->validate([
+                'title'=>['required','min:8','max:300'],
+                'text'=>['required','min:8','max:1000'],
+            ]);
+    
+            $article = new Article([
+                'title' => $request->get('title'),
+                'text' => $request->get('text'),
+            ]);
+    
+            $auth_user = Auth::user();
 
-        $article = new Article([
-            'title' => $request->get('title'),
-            'text' => $request->get('text'),
-        ]);
-
-        $auth_user = Auth::user();
-        $auth_user->articles()->save($article);
-
-        return redirect()->route('articles')->with('success', 'Статтю успішно додано!');
+            //Error handing: Save Article
+            try {
+                $auth_user->articles()->save($article);
+                return redirect()->route('articles')->with('success', 'Статтю успішно додано!');
+            } catch (\Exception $exception) {
+                if($exception instanceof \Illuminate\Database\QueryException) {
+                    return redirect()->route('articles.create')->with('danger', 'Помилка при запиті до бази даних');
+                } 
+                return redirect()->route('articles.create')->with('danger', 'Помилка сервера');
+            } 
     }
 
     /**
@@ -94,7 +131,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         return view('auth.articles.show', compact('article'));
     }
 
@@ -106,7 +143,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         if (!Auth::user() || !$article->isAuthor(Auth::user())) {
             return abort('404');
         }
@@ -123,18 +160,24 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title'=>['required','min:8'],
-            'text'=>['required','min:8'],
+            'title'=>['required','min:8','max:255'],
+            'text'=>['required','min:8','max:1000'],
         ]);
 
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
 
         $article->title =  $request->get('title');
         $article->text = $request->get('text');
         
-        $article->save();
-
-        return redirect()->route('articles')->with('success', 'Статтю редаговано!');
+        try {
+            $article->save();
+            return redirect()->route('articles')->with('success', 'Статтю редаговано!');
+        } catch (\Exception $exception) {
+            if($exception instanceof \Illuminate\Database\QueryException) {
+                return redirect()->route('articles')->with('danger', 'Помилка редагування статті при запиті до бази даних');
+            } 
+            return redirect()->route('articles')->with('danger', 'Помилка сервера при редагування статті');
+        } 
     }
 
     /**
@@ -145,14 +188,16 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         if (!Auth::user() || !$article->isAuthor(Auth::user())) {
             return abort('404');
         }
 
-        $article->delete();
+        if($article->delete()){
+            return redirect()->route('articles')->with('success', 'Статтю видалено!');
+        }
+        return redirect()->route('articles')->with('danger', 'Помилка видалення статті!');
 
-        return redirect()->route('articles')->with('success', 'Статтю видалено!');
     }
 
     

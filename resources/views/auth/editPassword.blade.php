@@ -8,6 +8,16 @@
                 <div class="card-header">{{ __('Змінити пароль') }}</div>
 
                 <div class="card-body">
+                    @if(session()->get('success'))
+                    <div  class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+                    @endif
+                    @if(session()->get('danger'))
+                    <div  class="alert alert-danger">
+                        {{ session()->get('danger') }}
+                    </div>
+                    @endif
                     <form method="POST" action="{{ route('users.update_password', $user->id) }}" enctype="multipart/form-data">
                         {{--  @method('PATCH')  --}}
                         @method('PUT')
@@ -45,7 +55,6 @@
                             </div>
                         </div>
 
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -54,11 +63,7 @@
                             </div>
                         </div>
                     </form>
-                    @if(session()->get('success'))
-                            <div class="alert alert-success">
-                                {{ session()->get('success') }}
-                            </div>
-                    @endif
+                    
                 </div>
             </div>
         </div>
