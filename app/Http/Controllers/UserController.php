@@ -6,11 +6,15 @@ use App\User;
 use Auth;
 use Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; 
 // Include Service for Image
 use App\Services\ImageService;
 
 class UserController extends Controller
 {
+    /**
+     * Display a details User account
+     */
     public function details()
     {
         $auth_user = Auth::user();
@@ -87,6 +91,12 @@ class UserController extends Controller
         // .............
         if ($file = $request->file('avatar')) {
             $path = '/img/users/';
+            $previous_image_path = public_path().$user->avatar;
+            if(file_exists($previous_image_path)){
+                if(!File::delete( $previous_image_path)) {
+                    return redirect()->route('users.details')->with('danger', 'Помилка зміни аватару.');
+                }
+            }
             $avatar = (new ImageService())->uploadImage($file,$user->nickname, $path);
             $user->avatar = $avatar;
         }
@@ -102,11 +112,19 @@ class UserController extends Controller
         } 
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     */
     public function editPassword(Request $request){ 
         $user = Auth::user();
         return view('auth.editPassword',['user'=>$user]);
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     */
     public function updatePassword(Request $request, $id){
         if (!(Hash::check($request->get('old_password'), Auth::user()->password))) {
             // The passwords not matches
@@ -117,13 +135,14 @@ class UserController extends Controller
             //Current password and new password are same
             return redirect('/account/password')->with('danger', 'Новий пароль не може співпадати зі старим!');
         }
+
         $validatedData = $request->validate([
             'old_password' => 'required',
             'new_password' => 'required|min:8|max:50|string|same:password_confirm',
         ]);
-        //Change Password
+        
         $user = User::findOrFail($id);
-
+        //Change Password
         if($request->get('new_password') !== null) {
             $user->password = Hash::make($request->get('new_password'));
             try {
@@ -137,8 +156,7 @@ class UserController extends Controller
             }
         }
         return redirect()->route('users.edit_password')->with('danger', 'Пароль не може мати значення null');
-        
-        
+           
     }
 
 }
