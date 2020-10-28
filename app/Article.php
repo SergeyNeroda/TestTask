@@ -31,6 +31,9 @@ class Article extends Model
         return $this->belongsToMany('App\User', 'article_user')->withTimestamps();
     }
 
+    /**
+     * Check User is Author
+     */
     public function isAuthor($user)
     {
         $auth_user = Auth::user();

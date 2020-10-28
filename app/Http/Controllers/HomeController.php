@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    /**
+     * Display a listing articles
+     */
     public function index ()
     {
         try {

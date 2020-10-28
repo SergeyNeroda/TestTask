@@ -30,6 +30,9 @@ class ArticleController extends Controller
         }        
     }
 
+    /**
+     * Display author's articles
+     */
     public function userArticles ()
     {
         $auth_user = Auth::user();
@@ -46,6 +49,9 @@ class ArticleController extends Controller
         }  
     }
 
+    /**
+     * Display author's Soft Deleted articles
+     */
     public function softDeleted()
     {
         $auth_user = Auth::user();
@@ -61,6 +67,9 @@ class ArticleController extends Controller
         }  
     }
 
+    /**
+     * Restore author's Soft Deleted article
+     */
     public function restore($id)
     {
         $article = Article::onlyTrashed()->findOrFail($id);
@@ -71,6 +80,9 @@ class ArticleController extends Controller
         return redirect()->route('articles.softDelete')->with('danger', 'Помилка відновлення статті!'); 
     }
 
+    /**
+     * Delete author's Soft Deleted article
+     */
     public function permanentDelete($id)
     {
         $article = Article::onlyTrashed()->findOrFail($id);

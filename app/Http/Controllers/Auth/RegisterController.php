@@ -114,11 +114,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // Get file from request
+        // Upload avatar
         $path = '/img/users/';
         $avatar = (new ImageService())->uploadImage($data['avatar'],$data['nickname'], $path);
 
-        //dd($avatar);
         return User::create([
             'nickname' => $data['nickname'],	
             'surname' => $data['surname'],	
