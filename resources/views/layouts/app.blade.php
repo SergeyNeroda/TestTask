@@ -54,6 +54,33 @@
                         <li class="nav__item"><a href="{{ url('/news') }}" class="nav__link {{ request()->is('news') ? 'nav__link--active' : '' }}">News</a></li>
                         <li class="nav__item"><a href="{{ url('/podcasts') }}" class="nav__link {{ request()->is('podcasts') ? 'nav__link--active' : '' }}">Podcasts</a></li>
                         <li class="nav__item"><a href="{{ url('/resources') }}" class="nav__link {{ request()->is('resources') ? 'nav__link--active' : '' }}">Resources</a></li>
+                        @auth
+                            <li class="nav__item"><a href="{{ url('/account') }}" class="nav__link {{ request()->is('account') ? 'nav__link--active' : '' }}">Аккаунт</a></li>
+                            <li class="nav__item"><a href="{{ url('/articles') }}" class="nav__link {{ request()->is('articles') ? 'nav__link--active' : '' }}">Статті</a></li>
+                        @endauth
+                    </ul>
+                    <ul class="nav__list nav__auth">
+                        @guest
+                            <li class="nav__item"><a class="btn btn--accent" href="{{ route('login') }}">{{ __('Вхід') }}</a></li>
+                            @if (Route::has('register'))
+                                <li class="nav__item"><a class="btn btn--accent" href="{{ route('register') }}">{{ __('Реєстрація') }}</a></li>
+                            @endif
+                        @else
+                            <li class="nav__item dropdown">
+                                <a id="navbarDropdown" class="nav__link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ Auth::user()->nickname }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        {{ __('Вихід') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
                     </ul>
                 </nav>
                 <a href="{{ url('/contact') }}" class="btn btn--accent {{ request()->is('contact') ? 'btn--active' : '' }}">Contact Us</a>
