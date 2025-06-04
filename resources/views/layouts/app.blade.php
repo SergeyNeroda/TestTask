@@ -14,49 +14,56 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/futuretech.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/futuretech.js') }}" defer></script>
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm mb-4">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'ITLab Task') }}</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Головна</a>
-                        </li>
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="site-container top-bar__inner">
+                <p class="top-bar__text">
+                    Subscribe to our Newsletter For New & latest Blogs and Resources
+                    <a href="/newsletter" class="top-bar__arrow-link" aria-label="Go to newsletter signup">
+                        <svg width="16" height="16" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 8h8M8 4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <header class="site-header">
+            <div class="site-container header__inner">
+                <a href="/" class="header__logo">
+                    <svg width="32" height="32" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30C8.28 30 2 23.72 2 16S8.28 2 16 2s14 6.28 14 14-6.28 14-14 14z"/>
+                        <path d="M11 11h10v10H11z"/>
+                    </svg>
+                    <span class="sr-only">FutureTech Home</span>
+                </a>
+                <button class="header__toggle" id="nav-toggle">☰</button>
+                <nav class="header__nav">
+                    <ul class="nav__list nav__primary">
+                        <li class="nav__item"><a href="{{ url('/') }}" class="nav__link {{ request()->is('/') ? 'active' : '' }}">Головна</a></li>
                         @auth
-                            <li class="nav-item">
-                                <a class="nav-link {{ request()->is('account') ? 'active' : '' }}" href="{{ url('/account') }}">Аккаунт</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {{ request()->is('articles') ? 'active' : '' }}" href="{{ url('/articles') }}">Статті</a>
-                            </li>
+                            <li class="nav__item"><a href="{{ url('/account') }}" class="nav__link {{ request()->is('account') ? 'active' : '' }}">Аккаунт</a></li>
+                            <li class="nav__item"><a href="{{ url('/articles') }}" class="nav__link {{ request()->is('articles') ? 'active' : '' }}">Статті</a></li>
                         @endauth
                     </ul>
-
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="nav__list nav__auth">
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Вхід') }}</a>
-                            </li>
+                            <li class="nav__item"><a class="nav__link" href="{{ route('login') }}">{{ __('Вхід') }}</a></li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Реєстрація') }}</a>
-                                </li>
+                                <li class="nav__item"><a class="nav__link" href="{{ route('register') }}">{{ __('Реєстрація') }}</a></li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li class="nav__item dropdown">
+                                <a id="navbarDropdown" class="nav__link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ Auth::user()->nickname }}
                                 </a>
 
@@ -73,9 +80,10 @@
                             </li>
                         @endguest
                     </ul>
-                </div>
+                </nav>
+                <a href="/contact" class="btn btn--accent">Contact Us</a>
             </div>
-        </nav>
+        </header>
 
         <main class="py-4">
             @yield('content')
