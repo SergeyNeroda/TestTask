@@ -77,7 +77,7 @@ class ArticleController extends Controller
         if($article->restore()) {
             return redirect()->route('articles')->with('success', 'Статтю успішно відновлено!');
         }  
-        return redirect()->route('articles.softDelete')->with('danger', 'Помилка відновлення статті!'); 
+        return redirect()->route('articles.softdeleted')->with('danger', 'Помилка відновлення статті!');
     }
 
     /**
