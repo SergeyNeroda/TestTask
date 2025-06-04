@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+@include('partials.page-banner', ['title' => 'Список видалених статтей'])
+<div class="site-container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center ">
                         <h5 class="card-title mb-0">Список видалених статтей</h5>
-                        <a href="{{ route('articles') }}" class="btn btn-success">Список статтей</a>
+                        <a href="{{ route('articles') }}" class="btn btn--accent">Список статтей</a>
                     </div>
                 </div>
 
@@ -52,7 +53,7 @@
                                     <form method="POST" action="{{ route('articles.restore',$article->id) }}">
                                         @method('PATCH')
                                         @csrf
-                                        <button class="btn btn-primary" type="submit">Відновити</button>
+                                        <button class="btn btn--accent" type="submit">Відновити</button>
                                     </form>
                                 </div>
                                

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+@include('partials.page-banner', ['title' => 'Список статтей'])
+<div class="site-container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -10,13 +11,13 @@
                         <h5 class="card-title mb-0">Список статтей</h5>
                         <div class="d-flex flex-row-reverse">
                             <div class="card ml-2">
-                                <a href="{{ route('articles.author') }}" class="btn btn-secondary">Авторські статті</a>
+                                <a href="{{ route('articles.author') }}" class="btn btn--accent">Авторські статті</a>
                             </div>
                             <div class="card ml-2">
-                                <a href="{{ route('articles.softdeleted') }}" class="btn btn-secondary">Видалені статті</a>
+                                <a href="{{ route('articles.softdeleted') }}" class="btn btn--accent">Видалені статті</a>
                             </div>
                             <div class="card ml-2">
-                                <a href="{{ route('articles.create') }}" class="btn btn-secondary">Додати</a>
+                                <a href="{{ route('articles.create') }}" class="btn btn--accent">Додати</a>
                             </div>
                         </div>
                     </div>
@@ -52,7 +53,7 @@
                                 @if ($auth_user && $article->isAuthor($auth_user))
 
                                     <div class="card ml-2">
-                                        <a href="{{ route('articles.edit',$article->id) }}" class="btn btn-primary text-white">Редагувати</a>
+                                        <a href="{{ route('articles.edit',$article->id) }}" class="btn btn--accent">Редагувати</a>
                                     </div>
                                     <div class="card ml-2">
                                         <form action="{{ route('articles.destroy', $article->id)}}" method="post">
@@ -64,7 +65,7 @@
                                  
                                 @endif
                                 <div class="card ml-2">
-                                    <a href="{{ route('articles.show',$article->id) }}" class="btn btn-info text-white">Переглянути</a>
+                                    <a href="{{ route('articles.show',$article->id) }}" class="btn btn--accent">Переглянути</a>
                                 </div>
                                
                             </div>

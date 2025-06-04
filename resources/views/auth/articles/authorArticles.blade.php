@@ -1,15 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+@include('partials.page-banner', ['title' => 'Авторські статті'])
 
-<div class="container">
+<div class="site-container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center ">
                         <h5 class="card-title mb-0">Авторські статті</h5>
-                        <a href="{{ route('articles') }}" class="btn btn-success">Список статтей</a>
+                        <a href="{{ route('articles') }}" class="btn btn--accent">Список статтей</a>
  
                     </div>
                 </div>
@@ -33,7 +34,7 @@
                                 @if ($auth_user && $article->isAuthor($auth_user))
 
                                     <div class="card ml-2">
-                                        <a href="{{ route('articles.edit',$article->id) }}" class="btn btn-primary text-white">Редагувати</a>
+                                        <a href="{{ route('articles.edit',$article->id) }}" class="btn btn--accent">Редагувати</a>
                                     </div>
                                     <div class="card ml-2">
                                         <form action="{{ route('articles.destroy', $article->id)}}" method="post">
@@ -45,7 +46,7 @@
                                  
                                 @endif
                                 <div class="card ml-2">
-                                    <a href="{{ route('articles.show',$article->id) }}" class="btn btn-info text-white">Переглянути</a>
+                                    <a href="{{ route('articles.show',$article->id) }}" class="btn btn--accent">Переглянути</a>
                                 </div>
                                
                             </div>
