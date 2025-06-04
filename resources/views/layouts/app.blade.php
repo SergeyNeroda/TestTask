@@ -57,9 +57,9 @@
                     </ul>
                     <ul class="nav__list nav__auth">
                         @guest
-                            <li class="nav__item"><a class="nav__link" href="{{ route('login') }}">{{ __('Вхід') }}</a></li>
+                            <li class="nav__item"><a class="btn btn--accent" href="{{ route('login') }}">{{ __('Вхід') }}</a></li>
                             @if (Route::has('register'))
-                                <li class="nav__item"><a class="nav__link" href="{{ route('register') }}">{{ __('Реєстрація') }}</a></li>
+                                <li class="nav__item"><a class="btn btn--accent" href="{{ route('register') }}">{{ __('Реєстрація') }}</a></li>
                             @endif
                         @else
                             <li class="nav__item dropdown">
