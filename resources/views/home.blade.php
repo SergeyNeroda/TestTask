@@ -24,12 +24,12 @@
             </div>
         </div>
         <div class="hero__graphic">
-            <img src="/assets/images/hero-graphic.png" alt="Futuristic AI network graphic" class="hero__image" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Futuristic AI network graphic" class="hero__image" />
             <div class="resources-widget">
                 <div class="resources-widget__avatars">
-                    <img src="/assets/images/avatar1.jpg" alt="Expert 1" class="avatar">
-                    <img src="/assets/images/avatar2.jpg" alt="Expert 2" class="avatar">
-                    <img src="/assets/images/avatar3.jpg" alt="Expert 3" class="avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 1" class="avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 2" class="avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 3" class="avatar">
                 </div>
                 <p class="resources-widget__text">Explore 1000+ resources</p>
                 <p class="resources-widget__subtext">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
@@ -88,7 +88,7 @@
     <div class="featured-content">
         <div class="featured-text">
             <a href="/" class="featured-logo">
-                <img src="/icons/logo-yellow.svg" alt="Logo" width="40" height="40">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Logo" width="40" height="40">
             </a>
             <h1 class="featured-title">Space Exploration Whitepaper</h1>
             <p class="featured-subtitle">An in-depth whitepaper covering the latest advancements in space exploration, including Mars missions and asteroid mining.</p>
@@ -100,14 +100,14 @@
             <a href="/assets/whitepaper.pdf" class="button button--primary">Download PDF Now</a>
         </div>
         <div class="featured-image-wrapper">
-            <img src="/assets/images/ai-cosmic-background.jpg" alt="Space AI" class="featured-image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Space AI" class="featured-image">
         </div>
     </div>
 </section>
 
 <section class="articles-grid">
     <article class="card">
-        <img src="/assets/images/futuretech-trends-2024.jpg" alt="FutureTech Trends 2024" class="card-image">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="FutureTech Trends 2024" class="card-image">
         <div class="card-content">
             <h3 class="card-title">FutureTech Trends 2024</h3>
             <p class="card-description">An ebook that predicts upcoming technology trends for the next year, including AI developments.</p>
@@ -118,7 +118,7 @@
         </div>
     </article>
     <article class="card">
-        <img src="/assets/images/space-exploration-ebook.jpg" alt="Space Exploration Ebook" class="card-image">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Space Exploration Ebook" class="card-image">
         <div class="card-content">
             <h3 class="card-title">Space Exploration Ebook</h3>
             <p class="card-description">An ebook that predicts upcoming technology trends for the next year, including AI developments.</p>
@@ -129,7 +129,7 @@
         </div>
     </article>
     <article class="card">
-        <img src="/assets/images/quantum-computing-whitepaper.jpg" alt="Quantum Computing Whitepaper" class="card-image">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Quantum Computing Whitepaper" class="card-image">
         <div class="card-content">
             <h3 class="card-title">Quantum Computing Whitepaper</h3>
             <p class="card-description">An in-depth whitepaper exploring the principles, applications.</p>

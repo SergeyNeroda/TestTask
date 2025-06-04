@@ -10,7 +10,7 @@
                 
                 <div class="card-body">
                     <div class="text-center mb-4">
-                        <img src="{{$auth_user->avatar}}" alt="Avatar" class="rounded-circle" style="width:120px;height:120px;">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Avatar" class="rounded-circle" style="width:120px;height:120px;">
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Нікнейм: {{$auth_user->nickname}}</li>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="hero-banner" style="background-image: url('/assets/images/hero-graphic.png');">
+<section class="hero-banner" style="background-color:#ccc;">
     <div class="hero-banner__overlay"></div>
     <h1 class="hero-banner__title">{{ $article->title }}</h1>
 </section>
@@ -54,7 +54,7 @@
     </div>
     <div class="similar-news-grid">
         <div class="similar-card">
-            <img src="/assets/images/hero-graphic.png" alt="Politics Story" class="similar-card__image" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Politics Story" class="similar-card__image" />
             <p class="similar-card__category">Politics</p>
             <h3 class="similar-card__title">A Decisive Victory for Progressive Policies</h3>
             <div class="similar-card__stats">
@@ -64,7 +64,7 @@
             <a href="#" class="similar-card__link">Read More →</a>
         </div>
         <div class="similar-card">
-            <img src="/assets/images/hero-graphic.png" alt="Technology Story" class="similar-card__image" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Technology Story" class="similar-card__image" />
             <p class="similar-card__category">Technology</p>
             <h3 class="similar-card__title">Tech Giants Unveil Cutting-Edge AI Innovations</h3>
             <div class="similar-card__stats">
@@ -74,7 +74,7 @@
             <a href="#" class="similar-card__link">Read More →</a>
         </div>
         <div class="similar-card">
-            <img src="/assets/images/hero-graphic.png" alt="Health Story" class="similar-card__image" />
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Health Story" class="similar-card__image" />
             <p class="similar-card__category">Health</p>
             <h3 class="similar-card__title">COVID-19 Variants</h3>
             <div class="similar-card__stats">
