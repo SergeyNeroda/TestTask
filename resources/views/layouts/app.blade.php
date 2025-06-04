@@ -51,10 +51,10 @@
                 <button class="header__toggle" id="nav-toggle">☰</button>
                 <nav class="header__nav">
                     <ul class="nav__list nav__primary">
-                        <li class="nav__item"><a href="{{ url('/') }}" class="nav__link {{ request()->is('/') ? 'active' : '' }}">Головна</a></li>
+                        <li class="nav__item"><a href="{{ url('/') }}" class="nav__link {{ request()->is('/') ? 'nav__link--active' : '' }}">Головна</a></li>
                         @auth
-                            <li class="nav__item"><a href="{{ url('/account') }}" class="nav__link {{ request()->is('account') ? 'active' : '' }}">Аккаунт</a></li>
-                            <li class="nav__item"><a href="{{ url('/articles') }}" class="nav__link {{ request()->is('articles') ? 'active' : '' }}">Статті</a></li>
+                            <li class="nav__item"><a href="{{ url('/account') }}" class="nav__link {{ request()->is('account') ? 'nav__link--active' : '' }}">Аккаунт</a></li>
+                            <li class="nav__item"><a href="{{ url('/articles') }}" class="nav__link {{ request()->is('articles') ? 'nav__link--active' : '' }}">Статті</a></li>
                         @endauth
                     </ul>
                     <ul class="nav__list nav__auth">
@@ -83,7 +83,7 @@
                         @endguest
                     </ul>
                 </nav>
-                <a href="{{ url('/contact') }}" class="btn btn--accent {{ request()->is('contact') ? 'btn--active' : '' }}">Contact Us</a>
+                <a href="{{ url('/contact') }}" class="btn btn--accent {{ request()->is('contact') ? 'nav__link--active' : '' }}">Contact Us</a>
             </div>
         </header>
 
