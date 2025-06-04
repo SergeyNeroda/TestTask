@@ -4,68 +4,42 @@
 @include('partials.page-banner', ['title' => 'Авторські статті'])
 
 <div class="site-container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <div class="d-flex justify-content-between align-items-center ">
-                        <h5 class="card-title mb-0">Авторські статті</h5>
-                        <a href="{{ route('articles') }}" class="btn btn--accent">Список статтей</a>
- 
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    @if($error)
-                            <div class="alert alert-danger">
-                                {{ $error }}
-                            </div>
-                    @endif
-                    @forelse ($articles as $article)
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <div>{{$article->title}}</div>
-                        </div>
-                        <div class="card-body">
-                            <div>{{$article->text}}</div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="d-flex flex-row-reverse">
-                                @if ($auth_user && $article->isAuthor($auth_user))
-
-                                    <div class="card ml-2">
-                                        <a href="{{ route('articles.edit',$article->id) }}" class="btn btn--accent">Редагувати</a>
-                                    </div>
-                                    <div class="card ml-2">
-                                        <form action="{{ route('articles.destroy', $article->id)}}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-danger" type="submit">Видалити</button>
-                                        </form>
-                                    </div>
-                                 
-                                @endif
-                                <div class="card ml-2">
-                                    <a href="{{ route('articles.show',$article->id) }}" class="btn btn--accent">Переглянути</a>
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </div>
-
-                    @empty
-                        <div class="alert alert-warning">
-                            Статті відсутні
-                        </div>
-                    @endforelse
-                    
-
-                    
-                </div>
-               
-            </div>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Авторські статті</h2>
+        <a href="{{ route('articles') }}" class="btn btn--accent">Список статтей</a>
     </div>
-</div>
 
+    @if($error)
+        <div class="alert alert-danger">
+            {{ $error }}
+        </div>
+    @endif
+
+    <section class="articles-grid">
+        @forelse ($articles as $article)
+            <article class="card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Article image" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">{{ $article->title }}</h3>
+                    <p class="card-description">{{ \Illuminate\Support\Str::limit($article->text, 150) }}</p>
+                    <div class="card-buttons">
+                        <a href="{{ route('articles.show',$article->id) }}" class="button button--outline">Переглянути</a>
+                        @if ($auth_user && $article->isAuthor($auth_user))
+                            <a href="{{ route('articles.edit',$article->id) }}" class="button button--primary">Редагувати</a>
+                            <form action="{{ route('articles.destroy', $article->id)}}" method="post" style="display:inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button class="button button--secondary" type="submit">Видалити</button>
+                            </form>
+                        @endif
+                    </div>
+                </div>
+            </article>
+        @empty
+            <div class="alert alert-warning">
+                Статті відсутні
+            </div>
+        @endforelse
+    </section>
+</div>
 @endsection

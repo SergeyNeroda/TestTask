@@ -3,75 +3,53 @@
 @section('content')
 @include('partials.page-banner', ['title' => 'Список видалених статтей'])
 <div class="site-container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <div class="d-flex justify-content-between align-items-center ">
-                        <h5 class="card-title mb-0">Список видалених статтей</h5>
-                        <a href="{{ route('articles') }}" class="btn btn--accent">Список статтей</a>
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    @if(session()->get('success'))
-                            <div class="alert alert-success">
-                                {{ session()->get('success') }}
-                            </div>
-                    @endif
-                    @if(session()->get('danger'))
-                            <div class="alert alert-danger">
-                                {{ session()->get('danger') }}
-                            </div>
-                    @endif
-                    @if($error)
-                            <div class="alert alert-danger">
-                                {{ $error }}
-                            </div>
-                    @endif
-
-                    @forelse ($articles as $article)
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <div>{{$article->title}}</div>
-                        </div>
-                        <div class="card-body">
-                            <div>{{$article->text}}</div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="d-flex flex-row-reverse">
-
-                                <div class="card ml-2">
-                                    <form action="{{ route('articles.permamentdelete', $article->id)}}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Видалити остаточно</button>
-                                    </form>
-                                </div>
-                                 
-                                <div class="card ml-2">
-                                    <form method="POST" action="{{ route('articles.restore',$article->id) }}">
-                                        @method('PATCH')
-                                        @csrf
-                                        <button class="btn btn--accent" type="submit">Відновити</button>
-                                    </form>
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </div>
-
-                    @empty
-                        <div class="alert alert-warning">
-                            Видалені статті відсутні
-                        </div>
-                    @endforelse
-
-                    
-                </div>
-               
-            </div>
-        </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Список видалених статтей</h2>
+        <a href="{{ route('articles') }}" class="btn btn--accent">Список статтей</a>
     </div>
+
+    @if(session()->get('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div>
+    @endif
+    @if(session()->get('danger'))
+        <div class="alert alert-danger">
+            {{ session()->get('danger') }}
+        </div>
+    @endif
+    @if($error)
+        <div class="alert alert-danger">
+            {{ $error }}
+        </div>
+    @endif
+
+    <section class="articles-grid">
+        @forelse ($articles as $article)
+            <article class="card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Article image" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">{{ $article->title }}</h3>
+                    <p class="card-description">{{ \Illuminate\Support\Str::limit($article->text, 150) }}</p>
+                    <div class="card-buttons">
+                        <form action="{{ route('articles.permamentdelete', $article->id)}}" method="post" style="display:inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <button class="button button--secondary" type="submit">Видалити остаточно</button>
+                        </form>
+                        <form method="POST" action="{{ route('articles.restore',$article->id) }}" style="display:inline-block;">
+                            @method('PATCH')
+                            @csrf
+                            <button class="button button--primary" type="submit">Відновити</button>
+                        </form>
+                    </div>
+                </div>
+            </article>
+        @empty
+            <div class="alert alert-warning">
+                Видалені статті відсутні
+            </div>
+        @endforelse
+    </section>
 </div>
 @endsection
