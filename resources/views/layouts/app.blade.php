@@ -50,6 +50,7 @@
                     <span class="sr-only">FutureTech</span>
                 </a>
                 <button class="header__toggle" id="nav-toggle">☰</button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
                 <nav class="header__nav">
                     <ul class="nav__list nav__primary">
                         <li class="nav__item"><a href="{{ url('/') }}" class="nav__link {{ request()->is('/') ? 'nav__link--active' : '' }}">Головна</a></li>
@@ -95,7 +96,7 @@
         <footer class="site-footer">
             <div class="site-footer__inner container">
                 <div class="footer-col footer-col--branding">
-                    <svg class="footer-logo" width="48" height="48" fill="#FFCC00" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="footer-logo" width="48" height="48" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30C8.28 30 2 23.72 2 16S8.28 2 16 2s14 6.28 14 14-6.28 14-14 14z"/>
                         <path d="M11 11h10v10H11z"/>
                     </svg>

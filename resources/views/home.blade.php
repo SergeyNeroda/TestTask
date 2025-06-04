@@ -2,10 +2,52 @@
 
 @section('content')
 
+<section class="hero">
+    <div class="site-container hero__inner">
+        <div class="hero__content">
+            <h1 class="hero__title">Explore the Frontiers of Artificial Intelligence</h1>
+            <p class="hero__subtitle">
+                Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.
+            </p>
+            <div class="hero__stats">
+                <div class="stat-card">
+                    <p class="stat-card__number">300<span class="stat-card__plus">+</span></p>
+                    <p class="stat-card__label">Resources available</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-card__number">12k<span class="stat-card__plus">+</span></p>
+                    <p class="stat-card__label">Total Downloads</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-card__number">10k<span class="stat-card__plus">+</span></p>
+                    <p class="stat-card__label">Active Users</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero__graphic">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Futuristic AI network graphic" class="hero__image" />
+            <div class="resources-widget">
+                <div class="resources-widget__avatars">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 1" class="avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 2" class="avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 3" class="avatar">
+                </div>
+                <p class="resources-widget__text">Explore 1000+ resources</p>
+                <p class="resources-widget__subtext">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
+                <a href="/resources" class="resources-widget__btn">
+                    Explore Resources
+                    <svg width="16" height="16" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 8h8M8 4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="ft-hero">
     <div class="ft-hero__inner container">
         <div class="ft-hero__logo">
-            <svg class="ft-hero__logo-image" width="64" height="64" fill="#FFCC00" xmlns="http://www.w3.org/2000/svg">
+            <svg class="ft-hero__logo-image" width="64" height="64" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30C8.28 30 2 23.72 2 16S8.28 2 16 2s14 6.28 14 14-6.28 14-14 14z"/>
                 <path d="M11 11h10v10H11z"/>
             </svg>
@@ -51,46 +93,10 @@
     </div>
 </section>
 
-<section class="hero">
-    <div class="site-container hero__inner">
-        <div class="hero__content">
-            <h1 class="hero__title">Explore the Frontiers of Artificial Intelligence</h1>
-            <p class="hero__subtitle">
-                Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.
-            </p>
-            <div class="hero__stats">
-                <div class="stat-card">
-                    <p class="stat-card__number">300<span class="stat-card__plus">+</span></p>
-                    <p class="stat-card__label">Resources available</p>
-                </div>
-                <div class="stat-card">
-                    <p class="stat-card__number">12k<span class="stat-card__plus">+</span></p>
-                    <p class="stat-card__label">Total Downloads</p>
-                </div>
-                <div class="stat-card">
-                    <p class="stat-card__number">10k<span class="stat-card__plus">+</span></p>
-                    <p class="stat-card__label">Active Users</p>
-                </div>
-            </div>
-        </div>
-        <div class="hero__graphic">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Futuristic AI network graphic" class="hero__image" />
-            <div class="resources-widget">
-                <div class="resources-widget__avatars">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 1" class="avatar">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 2" class="avatar">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 3" class="avatar">
-                </div>
-                <p class="resources-widget__text">Explore 1000+ resources</p>
-                <p class="resources-widget__subtext">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
-                <a href="/resources" class="resources-widget__btn">
-                    Explore Resources
-                    <svg width="16" height="16" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 8h8M8 4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
+<section class="features-intro">
+    <div class="site-container features-intro__inner">
+        <p class="features-intro__pretitle">Unlock the Power of</p>
+        <h2 class="features-intro__title">FutureTech Features</h2>
     </div>
 </section>
 <section class="features-strip">
@@ -125,12 +131,6 @@
             <h3 class="feature-card__title">Global Readership</h3>
             <p class="feature-card__subtitle">2 million monthly readers</p>
         </div>
-    </div>
-</section>
-<section class="features-intro">
-    <div class="site-container features-intro__inner">
-        <p class="features-intro__pretitle">Unlock the Power of</p>
-        <h2 class="features-intro__title">FutureTech Features</h2>
     </div>
 </section>
 
