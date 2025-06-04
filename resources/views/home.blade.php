@@ -84,48 +84,60 @@
     </div>
 </section>
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <div class="d-flex justify-content-between align-items-center ">
-                        <h5 class="card-title mb-0">Усі статті</h5>
-                    </div>
-                </div>
-
-                <div class="card-body">
-                    @if($error)
-                            <div class="alert alert-danger">
-                                {{ $error }}
-                            </div>
-                    @endif
-                    @forelse ($articles as $article)
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <div>{{$article->title}}</div>
-                        </div>
-                        <div class="card-body">
-                            <div>{{$article->text}}</div>
-                        </div>
-                        {{--  <div class="card-footer">
-                            <div class="d-flex flex-row-reverse">
-
-                            </div>
-                        </div>  --}}
-                    </div>
-
-                    @empty
-                        <div class="alert alert-warning">
-                            Статті відсутні
-                        </div>
-                    @endforelse
-
-
-                </div>
-
+<section class="featured-article">
+    <div class="featured-content">
+        <div class="featured-text">
+            <a href="/" class="featured-logo">
+                <img src="/icons/logo-yellow.svg" alt="Logo" width="40" height="40">
+            </a>
+            <h1 class="featured-title">Space Exploration Whitepaper</h1>
+            <p class="featured-subtitle">An in-depth whitepaper covering the latest advancements in space exploration, including Mars missions and asteroid mining.</p>
+            <div class="meta-chips">
+                <span class="meta-chip">Publication Date: September 2023</span>
+                <span class="meta-chip">Category: Space Exploration</span>
+                <span class="meta-chip">Author: FutureTech Space Division</span>
             </div>
+            <a href="/assets/whitepaper.pdf" class="button button--primary">Download PDF Now</a>
+        </div>
+        <div class="featured-image-wrapper">
+            <img src="/assets/images/ai-cosmic-background.jpg" alt="Space AI" class="featured-image">
         </div>
     </div>
-</div>
+</section>
+
+<section class="articles-grid">
+    <article class="card">
+        <img src="/assets/images/futuretech-trends-2024.jpg" alt="FutureTech Trends 2024" class="card-image">
+        <div class="card-content">
+            <h3 class="card-title">FutureTech Trends 2024</h3>
+            <p class="card-description">An ebook that predicts upcoming technology trends for the next year, including AI developments.</p>
+            <div class="card-buttons">
+                <a href="/futuretech-trends-2024" class="button button--outline">View Details</a>
+                <a href="/assets/futuretech-trends-2024.pdf" class="button button--secondary">Download PDF Now</a>
+            </div>
+        </div>
+    </article>
+    <article class="card">
+        <img src="/assets/images/space-exploration-ebook.jpg" alt="Space Exploration Ebook" class="card-image">
+        <div class="card-content">
+            <h3 class="card-title">Space Exploration Ebook</h3>
+            <p class="card-description">An ebook that predicts upcoming technology trends for the next year, including AI developments.</p>
+            <div class="card-buttons">
+                <a href="/space-exploration-ebook" class="button button--outline">View Details</a>
+                <a href="/assets/space-exploration-ebook.pdf" class="button button--secondary">Download PDF Now</a>
+            </div>
+        </div>
+    </article>
+    <article class="card">
+        <img src="/assets/images/quantum-computing-whitepaper.jpg" alt="Quantum Computing Whitepaper" class="card-image">
+        <div class="card-content">
+            <h3 class="card-title">Quantum Computing Whitepaper</h3>
+            <p class="card-description">An in-depth whitepaper exploring the principles, applications.</p>
+            <div class="card-buttons">
+                <a href="/quantum-computing-whitepaper" class="button button--outline">View Details</a>
+                <a href="/assets/quantum-computing-whitepaper.pdf" class="button button--secondary">Download PDF Now</a>
+            </div>
+        </div>
+    </article>
+</section>
 @endsection
