@@ -22,6 +22,10 @@ Auth::routes([
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', ['uses'=>'HomeController@index', 'as'=>'home.index']);
+    Route::view('/news', 'news')->name('news');
+    Route::view('/podcasts', 'podcasts')->name('podcasts');
+    Route::view('/resources', 'resources')->name('resources');
+    Route::view('/contact', 'contact')->name('contact');
 
     Route::group(['middleware' => ['auth']], function () {
 
