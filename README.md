@@ -1,7 +1,7 @@
 # TestTask
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
+![Build Status](data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E)
+![License](data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E)
 
 ## Description
 A Laravel-based web application for managing user accounts and articles with an optional Vue.js frontend.
