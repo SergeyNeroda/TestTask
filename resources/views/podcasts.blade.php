@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="page-banner">
-  <div class="site-container page-banner__inner">
-    <h1 class="page-banner__title">Podcasts</h1>
-  </div>
-</section>
+@include('partials.page-banner', ['title' => 'Podcasts'])
 @endsection

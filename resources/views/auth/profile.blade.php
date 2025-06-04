@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+@include('partials.page-banner', ['title' => __('Деталі аккаунту')])
+<div class="site-container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -41,8 +42,8 @@
                 </div>
 
                 <div class="card-footer">
-                    <a href="{{ route('users.edit') }}" class="btn btn-primary">Редагувати</a>
-                    <a href="{{ route('users.edit_password') }}" class="btn btn-primary">Змінити пароль</a>
+                    <a href="{{ route('users.edit') }}" class="btn btn--accent">Редагувати</a>
+                    <a href="{{ route('users.edit_password') }}" class="btn btn--accent">Змінити пароль</a>
                 </div>
                     
             </div>
