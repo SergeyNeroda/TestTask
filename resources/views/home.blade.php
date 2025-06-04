@@ -1,6 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
+
+<section class="ft-hero">
+    <div class="ft-hero__inner container">
+        <div class="ft-hero__logo">
+            <svg class="ft-hero__logo-image" width="64" height="64" fill="#FFCC00" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30C8.28 30 2 23.72 2 16S8.28 2 16 2s14 6.28 14 14-6.28 14-14 14z"/>
+                <path d="M11 11h10v10H11z"/>
+            </svg>
+        </div>
+
+        <div class="ft-hero__text">
+            <p class="ft-hero__tagline">Learn, Connect, and Innovate</p>
+            <h2 class="ft-hero__headline">Be Part of the Future Tech Revolution</h2>
+            <p class="ft-hero__subhead">
+                Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.
+            </p>
+        </div>
+    </div>
+
+    <div class="ft-hero__cards container">
+        <div class="ft-card">
+            <h3 class="ft-card__title">Resource Access</h3>
+            <p class="ft-card__desc">
+                Visitors can access a wide range of resources, including ebooks, whitepapers, reports.
+            </p>
+            <a href="/resources" class="ft-card__link">
+                <span class="ft-card__icon">→</span>
+            </a>
+        </div>
+        <div class="ft-card">
+            <h3 class="ft-card__title">Community Forum</h3>
+            <p class="ft-card__desc">
+                Join our active community forum to discuss industry trends, share insights, and collaborate with peers.
+            </p>
+            <a href="/forum" class="ft-card__link">
+                <span class="ft-card__icon">→</span>
+            </a>
+        </div>
+        <div class="ft-card">
+            <h3 class="ft-card__title">Tech Events</h3>
+            <p class="ft-card__desc">
+                Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge.
+            </p>
+            <a href="/events" class="ft-card__link">
+                <span class="ft-card__icon">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
 <section class="hero">
     <div class="site-container hero__inner">
         <div class="hero__content">
