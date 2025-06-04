@@ -21,6 +21,7 @@
     <link href="{{ asset('css/futuretech.css') }}" rel="stylesheet">
     <link href="{{ asset('css/featured-articles.css') }}" rel="stylesheet">
     <script src="{{ asset('js/futuretech.js') }}" defer></script>
+    <script src="{{ asset('js/theme.js') }}" defer></script>
 
 </head>
 <body>
