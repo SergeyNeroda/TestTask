@@ -24,19 +24,6 @@
 </head>
 <body>
     <div id="app">
-        <!-- Top Bar -->
-        <div class="top-bar">
-            <div class="site-container top-bar__inner">
-                <p class="top-bar__text">
-                    Subscribe to our Newsletter For New & latest Blogs and Resources
-                    <a href="/newsletter" class="top-bar__arrow-link" aria-label="Go to newsletter signup">
-                        <svg width="16" height="16" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 8h8M8 4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </p>
-            </div>
-        </div>
         <header class="site-header">
             <div class="site-container header__inner">
                 <a href="/" class="header__logo">
