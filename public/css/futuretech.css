@@ -3,22 +3,23 @@
   --color-bg-alt: #1A1A1A;
   --color-text: #FFFFFF;
   --color-text-muted: rgba(255, 255, 255, 0.7);
-  --color-accent: #0091FF;
+  --color-accent: #007BFF;
   --color-divider: #2A2A2A;
   --font-primary: 'Inter', sans-serif;
   --font-secondary: 'Roboto', sans-serif;
   --spacing-unit: 1rem;
 }
 html {
+  font-size: 16px;
+}
+
 [data-theme="light"] {
   --color-bg: #FFFFFF;
   --color-bg-alt: #F5F5F5;
   --color-text: #000000;
-  --color-text-muted: rgba(0,0,0,0.7);
+  --color-text-muted: rgba(0, 0, 0, 0.7);
   --color-divider: #E0E0E0;
-  --color-accent: #0091FF;
-}
-  font-size: 16px;
+  --color-accent: #007BFF;
 }
 body {
   background-color: var(--color-bg);
@@ -133,7 +134,7 @@ main {
   color: var(--color-bg-alt);
 }
 .btn--accent:hover {
-  background-color: #FFB300;
+  background-color: #0056b3;
   color: var(--color-bg-alt);
 }
 .hero {
