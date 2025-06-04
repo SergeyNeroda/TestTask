@@ -856,9 +856,17 @@ nav.header__nav {
 .user-dropdown__toggle {
   background: none;
   border: none;
-  color: inherit;
-  font: inherit;
+  color: var(--color-text);
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 0;
   cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.user-dropdown__toggle:hover {
+  color: var(--color-accent);
 }
 
 .user-dropdown-menu {
