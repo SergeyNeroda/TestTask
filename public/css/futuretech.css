@@ -19,6 +19,17 @@ body {
   font-family: var(--font-secondary);
   line-height: 1.6;
 }
+html, body {
+  height: 100%;
+}
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
 .site-container {
   max-width: 1280px;
   margin: 0 auto;
@@ -378,5 +389,11 @@ nav.header__nav {
   background-color: #FFB300;
   border-color: #FFB300;
   color: var(--color-bg-alt);
+}
+
+.list-group-item {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-divider);
+  color: var(--color-text);
 }
 
