@@ -14,7 +14,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -22,55 +22,29 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm ">
-            <div class="container ">
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav">
-                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">
-                            Головна
-                        </a>
-                        
-                    @guest
-
-                    @else
-                        <a class="nav-link {{ request()->is('account') ? 'active' : '' }}" href="{{ url('/account') }}">
-                            Аккаунт
-                        </a>
-                        
-                        <a class="nav-link {{ request()->is('articles') ? 'active' : '' }}" href="{{ url('/articles') }}">
-                            Статті
-                        </a>
-                    @endguest
-
-                    <ul/>
-                    
-                </div>
-
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm mb-4">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'ITLab Task') }}</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto collapse">
-                        
-                                <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">
-                                    Головна
-                                </a>
-                                
-                            @guest
-        
-                            @else
-                                <a class="nav-link {{ request()->is('account') ? 'active' : '' }}" href="{{ url('/account') }}">
-                                    Аккаунт
-                                </a>
-                            @endguest
-        
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Головна</a>
+                        </li>
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->is('account') ? 'active' : '' }}" href="{{ url('/account') }}">Аккаунт</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->is('articles') ? 'active' : '' }}" href="{{ url('/articles') }}">Статті</a>
+                            </li>
+                        @endauth
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Вхід') }}</a>
@@ -82,14 +56,13 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ Auth::user()->nickname }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Вихід') }}
                                     </a>
 
@@ -107,6 +80,12 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer class="bg-dark text-white py-3 mt-4">
+            <div class="container text-center">
+                &copy; {{ date('Y') }} {{ config('app.name', 'Blog') }}
+            </div>
+        </footer>
 
     </div>
 
