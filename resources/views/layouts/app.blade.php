@@ -64,13 +64,13 @@
                                 <li class="nav__item"><a class="nav__link" href="{{ route('register') }}">{{ __('Реєстрація') }}</a></li>
                             @endif
                         @else
-                            <li class="nav__item dropdown">
-                                <a id="navbarDropdown" class="nav__link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li class="nav__item user-dropdown">
+                                <button class="nav__link user-dropdown__toggle" aria-haspopup="true" aria-expanded="false">
                                     {{ Auth::user()->nickname }}
-                                </a>
+                                </button>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <div class="user-dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Вихід') }}
                                     </a>
