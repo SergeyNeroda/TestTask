@@ -20,7 +20,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/futuretech.css') }}" rel="stylesheet">
     <link href="{{ asset('css/featured-articles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <script src="{{ asset('js/futuretech.js') }}" defer></script>
+    <script src="{{ asset('js/navbar.js') }}" defer></script>
     <script src="{{ asset('js/theme.js') }}" defer></script>
 
 </head>
@@ -41,59 +43,7 @@
         </div>
 
         <!-- Header / Navbar -->
-        <header class="site-header">
-            <div class="site-container header__inner">
-                <a href="/" class="header__logo" aria-label="FutureTech Home">
-                    <svg width="32" height="32" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30C8.28 30 2 23.72 2 16S8.28 2 16 2s14 6.28 14 14-6.28 14-14 14z"/>
-                        <path d="M11 11h10v10H11z"/>
-                    </svg>
-                    <span class="sr-only">FutureTech</span>
-                </a>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                    <span class="nav-toggle__bar"></span>
-                    <span class="nav-toggle__bar"></span>
-                    <span class="nav-toggle__bar"></span>
-                </button>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
-                <nav class="header__nav">
-                    <ul class="nav__list nav__primary">
-                        <li class="nav__item"><a href="{{ url('/') }}" class="nav__link {{ request()->is('/') ? 'nav__link--active' : '' }}">Головна</a></li>
-                        @auth
-                            <li class="nav__item"><a href="{{ url('/account') }}" class="nav__link {{ request()->is('account') ? 'nav__link--active' : '' }}">Аккаунт</a></li>
-                            <li class="nav__item"><a href="{{ url('/articles') }}" class="nav__link {{ request()->is('articles') ? 'nav__link--active' : '' }}">Статті</a></li>
-                        @endauth
-                    </ul>
-                    <ul class="nav__list nav__auth">
-                        @guest
-                            <li class="nav__item"><a class="nav__link {{ request()->is('login') ? 'nav__link--active' : '' }}" href="{{ route('login') }}">{{ __('Вхід') }}</a></li>
-                            @if (Route::has('register'))
-                                <li class="nav__item"><a class="nav__link {{ request()->is('register') ? 'nav__link--active' : '' }}" href="{{ route('register') }}">{{ __('Реєстрація') }}</a></li>
-                            @endif
-                        @else
-                            <li class="nav__item user-dropdown">
-                                <button class="nav__link user-dropdown__toggle" aria-haspopup="true" aria-expanded="false">
-                                    {{ Auth::user()->nickname }}
-                                </button>
-
-                                <div class="user-dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        {{ __('Вихід') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" role="form" aria-label="Прихований вихід">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </nav>
-                <a href="{{ url('/contact') }}" class="btn btn--accent {{ request()->is('contact') ? 'nav__link--active' : '' }}">Контакти</a>
-            </div>
-        </header>
-
+        <x-navbar />
         <main class="py-4">
             @yield('content')
         </main>
