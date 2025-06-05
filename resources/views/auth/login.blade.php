@@ -7,7 +7,7 @@
             <div class="card">
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" role="form" aria-label="Форма входу">
                         @csrf
 
                         <div class="form-group row">

@@ -16,7 +16,7 @@
 
                     {{ __('Перш ніж продовжити, перевірте електронну пошту, щоб знайти лист з посиланням для підтвердження.') }}
                     {{ __('Якщо ви не отримали листа') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}" role="form" aria-label="Надіслати повторно">
                         @csrf
                         <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('натисніть тут, щоб надіслати запит ще раз') }}</button>.
                     </form>

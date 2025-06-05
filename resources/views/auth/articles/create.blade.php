@@ -3,7 +3,7 @@
 @section('content')
 @include('partials.page-banner', ['title' => __('Створити статтю')])
 <div class="site-container">
-    <form method="POST" action="{{ route('articles.store') }}" class="contact-form">
+    <form method="POST" action="{{ route('articles.store') }}" class="contact-form" role="form" aria-label="Створення статті">
         @csrf
         @if(session()->get('danger'))
             <div class="alert alert-danger">

@@ -36,7 +36,7 @@
                         <a href="{{ route('articles.show',$article->id) }}" class="action-button action-button--view">Переглянути</a>
                         @if ($auth_user && $article->isAuthor($auth_user))
                             <a href="{{ route('articles.edit',$article->id) }}" class="action-button action-button--edit">Редагувати</a>
-                            <form action="{{ route('articles.destroy', $article->id)}}" method="post" style="display:inline-block;">
+                            <form action="{{ route('articles.destroy', $article->id)}}" method="post" style="display:inline-block;" role="form" aria-label="Видалити статтю">
                                 @csrf
                                 @method('DELETE')
                                 <button class="action-button action-button--delete" type="submit">Видалити</button>

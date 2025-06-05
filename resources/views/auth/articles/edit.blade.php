@@ -3,7 +3,7 @@
 @section('content')
 @include('partials.page-banner', ['title' => __('Редагувати статтю')])
 <div class="site-container">
-    <form method="POST" action="{{ route('articles.update',$article->id) }}" class="contact-form">
+    <form method="POST" action="{{ route('articles.update',$article->id) }}" class="contact-form" role="form" aria-label="Редагувати статтю">
         @method('PATCH')
         @csrf
 
