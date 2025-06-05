@@ -49,30 +49,30 @@
             <div class="form-row">
               <div class="form-field">
                 <label for="firstName" class="form-label">Ім'я</label>
-                <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Введіть ім'я">
+                <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Введіть ім'я" required aria-required="true">
               </div>
               <div class="form-field">
                 <label for="lastName" class="form-label">Прізвище</label>
-                <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Введіть прізвище">
+                <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Введіть прізвище" required aria-required="true">
               </div>
             </div>
             <div class="form-row">
               <div class="form-field">
                 <label for="email" class="form-label">Ел. пошта</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="Введіть ел. пошту">
+                <input type="email" id="email" name="email" class="form-input" placeholder="Введіть ел. пошту" required aria-required="true">
               </div>
               <div class="form-field">
                 <label for="phone" class="form-label">Номер телефону</label>
                 <div class="phone-input-wrapper">
                   <span class="phone-flag">🇺🇸</span>
-                  <input type="tel" id="phone" name="phone" class="form-input form-input--phone" placeholder="Введіть номер телефону">
+                  <input type="tel" id="phone" name="phone" class="form-input form-input--phone" placeholder="Введіть номер телефону" autocomplete="tel">
                 </div>
               </div>
             </div>
             <div class="form-row">
               <div class="form-field form-field--full">
                 <label for="message" class="form-label">Повідомлення</label>
-                <textarea id="message" name="message" class="form-textarea" placeholder="Введіть повідомлення"></textarea>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Введіть повідомлення" required aria-required="true"></textarea>
               </div>
             </div>
             <div class="form-row form-row--footer">
@@ -80,7 +80,7 @@
                 <input type="checkbox" id="agree" name="agree" class="form-checkbox">
                 <label for="agree" class="form-checkbox-label">Я погоджуюсь з Умовами використання та Політикою приватності</label>
               </div>
-              <button type="submit" class="btn btn--accent btn--send">Надіслати</button>
+              <button type="submit" class="btn btn--accent btn--send" aria-label="Надіслати форму">Надіслати</button>
             </div>
           </form>
         </div>
