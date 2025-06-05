@@ -1525,3 +1525,11 @@ section {
   align-items: center;
   flex-direction: column;
 }
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  min-width: 320px;
+  padding: 24px;
+  background: #1a1a1a;
+  border-radius: 8px;
+}
