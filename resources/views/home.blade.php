@@ -144,7 +144,7 @@
                 <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Logo" width="40" height="40">
             </a>
             <div class="featured-title-wrapper">
-                <h1 class="featured-title">Білий документ з дослідження космосу</h1>
+                <h2 class="featured-title">Білий документ з дослідження космосу</h2>
                 <a href="/assets/whitepaper.pdf" class="button button--primary featured-download">Завантажити PDF</a>
             </div>
             <p class="featured-subtitle">Докладний whitepaper про останні досягнення у дослідженні космосу, зокрема місії на Марс та видобуток астероїдів.</p>

@@ -8,6 +8,10 @@
   --font-primary: 'Inter', sans-serif;
   --font-secondary: 'Roboto', sans-serif;
   --spacing-unit: 1rem;
+  --spacing-1: 0.5rem;
+  --spacing-2: 1rem;
+  --spacing-3: 1.5rem;
+  --spacing-4: 2rem;
 }
 html {
   font-size: 16px;
@@ -130,7 +134,7 @@ main {
   padding: 0.5rem 1.25rem;
   border-radius: 0.375rem;
   line-height: 1;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 .btn--accent {
   background-color: #1e90ff;
@@ -139,6 +143,7 @@ main {
 .btn--accent:hover {
   background-color: #1c86ee;
   color: var(--color-bg-alt);
+  transform: scale(1.02);
 }
 .btn--secondary {
   background-color: #ffffff;
@@ -148,10 +153,14 @@ main {
 .btn--secondary:hover {
   background-color: #f2f2f2;
 }
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .hero {
   background-color: var(--color-bg);
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
 }
 .hero__inner {
   display: grid;
@@ -521,7 +530,7 @@ nav.header__nav {
   padding: 0.5rem 1.25rem;
   border-radius: 0.375rem;
   line-height: 1;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 .btn--accent {
   background-color: #1e90ff;
@@ -529,6 +538,7 @@ nav.header__nav {
 }
 .btn--accent:hover {
   background-color: #1c86ee;
+  transform: scale(1.02);
 }
 .nav-toggle {
   display: none;
