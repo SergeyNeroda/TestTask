@@ -10967,3 +10967,11 @@ footer {
   margin-bottom: 0;
 }
 
+.filter-form {
+  display: flex;
+  gap: 0.5rem;
+}
+.filter-form input {
+  flex: 1;
+}
+

@@ -64,3 +64,12 @@ footer {
     margin-top: 16px;
     margin-bottom: 0;
 }
+
+/* Articles filter form */
+.filter-form {
+    display: flex;
+    gap: 0.5rem;
+}
+.filter-form input {
+    flex: 1;
+}

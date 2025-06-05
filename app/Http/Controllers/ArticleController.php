@@ -14,20 +14,41 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $auth_user = Auth::user();
 
-        //Error handing: Get Articles
+        $query = Article::orderBy('created_at', 'desc');
+        if ($request->filled('search')) {
+            $search = $request->get('search');
+            $query->where('title', 'like', "%{$search}%");
+        }
+
         try {
-            $articles = Article::orderBy('created_at', 'desc')->get();
-            return view('auth.articles.index', ['articles'=>$articles, 'auth_user'=>$auth_user,'error'=>'']);
+            $articles = $query->get();
+            return view('auth.articles.index', [
+                'articles'   => $articles,
+                'auth_user'  => $auth_user,
+                'error'      => '',
+                'searchTerm' => $request->get('search', ''),
+            ]);
         } catch (\Exception $exception) {
-            if($exception instanceof \Illuminate\Database\QueryException) {
-                return view('auth.articles.index', ['articles'=>[], 'auth_user'=>$auth_user, 'error'=>'Помилка в базі данних. Неможливо відобразити статті']);
-            } 
-            return view('auth.articles.index', ['articles'=>$articles, 'auth_user'=>$auth_user,'error'=>'Помилка показу статтей']);
-        }        
+            if ($exception instanceof \Illuminate\Database\QueryException) {
+                return view('auth.articles.index', [
+                    'articles'   => [],
+                    'auth_user'  => $auth_user,
+                    'error'      => 'Помилка в базі данних. Неможливо відобразити статті',
+                    'searchTerm' => $request->get('search', ''),
+                ]);
+            }
+
+            return view('auth.articles.index', [
+                'articles'   => [],
+                'auth_user'  => $auth_user,
+                'error'      => 'Помилка показу статтей',
+                'searchTerm' => $request->get('search', ''),
+            ]);
+        }
     }
 
     /**

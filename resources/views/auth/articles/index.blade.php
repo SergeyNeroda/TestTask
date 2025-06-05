@@ -7,10 +7,16 @@
     ['label' => 'Статті']
 ]])
 <div class="site-container">
-    <div class="mb-4 text-end">
-        <a href="{{ route('articles.create') }}" class="btn btn--accent ml-2">Додати</a>
-        <a href="{{ route('articles.softdeleted') }}" class="btn btn--accent ml-2">Видалені статті</a>
-        <a href="{{ route('articles.author') }}" class="btn btn--accent ml-2">Авторські статті</a>
+    <div class="mb-4 d-flex justify-content-between align-items-center">
+        <div>
+            <a href="{{ route('articles.create') }}" class="btn btn--accent ml-2">Додати</a>
+            <a href="{{ route('articles.softdeleted') }}" class="btn btn--accent ml-2">Видалені статті</a>
+            <a href="{{ route('articles.author') }}" class="btn btn--accent ml-2">Авторські статті</a>
+        </div>
+        <form method="GET" action="{{ route('articles') }}" class="filter-form" role="search">
+            <input type="text" name="search" class="form-control" placeholder="Пошук статей" value="{{ $searchTerm ?? '' }}">
+            <button class="btn btn--accent" type="submit">Фільтрувати</button>
+        </form>
     </div>
 
     @if(session()->get('success'))
