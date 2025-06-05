@@ -97,7 +97,7 @@
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 16px;
   max-width: 1140px;
   margin: 40px auto 60px auto;
 }
@@ -108,11 +108,12 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .card-image {
@@ -174,6 +175,38 @@
 
 .button--secondary:hover {
   background-color: #E6B800;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.action-button--view {
+  background-color: #333333;
+  color: #ffffff;
+}
+.action-button--view:hover {
+  background-color: #444444;
+}
+
+.action-button--edit {
+  background-color: #1e90ff;
+  color: #ffffff;
+}
+.action-button--edit:hover {
+  background-color: #1c86ee;
+}
+
+.action-button--delete {
+  background-color: #e05c4a;
+  color: #ffffff;
+}
+.action-button--delete:hover {
+  background-color: #c74f40;
 }
 
 /* Responsive adjustments for tablets */

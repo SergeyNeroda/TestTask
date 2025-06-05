@@ -140,6 +140,14 @@ main {
   background-color: #1c86ee;
   color: var(--color-bg-alt);
 }
+.btn--secondary {
+  background-color: #ffffff;
+  color: #444444;
+  border: 1px solid #cccccc;
+}
+.btn--secondary:hover {
+  background-color: #f2f2f2;
+}
 .hero {
   background-color: var(--color-bg);
   padding-top: 4rem;
@@ -502,7 +510,8 @@ nav.header__nav {
   border-radius: 0.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  color: var(--color-text);
+  color: #1e90ff;
+  font-weight: 700;
 }
 .btn {
   display: inline-block;
@@ -880,6 +889,7 @@ nav.header__nav {
 
 .user-dropdown {
   position: relative;
+  margin-left: 1rem;
 }
 
 .user-dropdown__toggle {
@@ -1428,11 +1438,12 @@ nav.header__nav {
   margin-bottom: 1.5rem;
 }
 .account-profile__avatar {
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 .account-profile__nickname {
   font-family: var(--font-primary);
@@ -1445,7 +1456,11 @@ nav.header__nav {
   width: 100%;
   margin-bottom: 1.5rem;
 }
-.account-profile__list li {
+.account-profile__list dt {
+  font-weight: 700;
+}
+.account-profile__list dd {
+  margin: 0 0 0.5rem 0;
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--color-divider);
 }

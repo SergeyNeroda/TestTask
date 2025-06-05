@@ -90,7 +90,7 @@
                         @endguest
                     </ul>
                 </nav>
-                <a href="{{ url('/contact') }}" class="btn btn--accent {{ request()->is('contact') ? 'nav__link--active' : '' }}">Зв’язатися з нами</a>
+                <a href="{{ url('/contact') }}" class="btn btn--accent {{ request()->is('contact') ? 'nav__link--active' : '' }}">Контакти</a>
             </div>
         </header>
 

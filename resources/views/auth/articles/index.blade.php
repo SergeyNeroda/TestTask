@@ -3,13 +3,10 @@
 @section('content')
 @include('partials.page-banner', ['title' => 'Список статтей'])
 <div class="site-container">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">Список статтей</h2>
-        <div class="d-flex flex-row-reverse">
-            <a href="{{ route('articles.create') }}" class="btn btn--accent ml-2">Додати</a>
-            <a href="{{ route('articles.softdeleted') }}" class="btn btn--accent ml-2">Видалені статті</a>
-            <a href="{{ route('articles.author') }}" class="btn btn--accent ml-2">Авторські статті</a>
-        </div>
+    <div class="mb-4 text-end">
+        <a href="{{ route('articles.create') }}" class="btn btn--accent ml-2">Додати</a>
+        <a href="{{ route('articles.softdeleted') }}" class="btn btn--accent ml-2">Видалені статті</a>
+        <a href="{{ route('articles.author') }}" class="btn btn--accent ml-2">Авторські статті</a>
     </div>
 
     @if(session()->get('success'))
@@ -36,13 +33,13 @@
                     <h3 class="card-title">{{ $article->title }}</h3>
                     <p class="card-description">{{ \Illuminate\Support\Str::limit($article->text, 150) }}</p>
                     <div class="card-buttons">
-                        <a href="{{ route('articles.show',$article->id) }}" class="button button--outline">Переглянути</a>
+                        <a href="{{ route('articles.show',$article->id) }}" class="action-button action-button--view">Переглянути</a>
                         @if ($auth_user && $article->isAuthor($auth_user))
-                            <a href="{{ route('articles.edit',$article->id) }}" class="button button--primary">Редагувати</a>
+                            <a href="{{ route('articles.edit',$article->id) }}" class="action-button action-button--edit">Редагувати</a>
                             <form action="{{ route('articles.destroy', $article->id)}}" method="post" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button class="button button--secondary" type="submit">Видалити</button>
+                                <button class="action-button action-button--delete" type="submit">Видалити</button>
                             </form>
                         @endif
                     </div>
