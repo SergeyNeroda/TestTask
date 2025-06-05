@@ -3,57 +3,44 @@
 @section('content')
 @include('partials.page-banner', ['title' => __('Створити статтю')])
 <div class="site-container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Створити статтю') }}</div>
-                
-                <div class="card-body">
-                    <form method="POST" action="{{ route('articles.store') }}">
-                        @csrf
-                        @if(session()->get('danger'))
-                        <div  class="alert alert-danger">
-                            {{ session()->get('danger') }}
-                        </div>
-                        @endif
-                        <div class="form-group row">
-                            <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Заголовок') }}</label>
+    <form method="POST" action="{{ route('articles.store') }}" class="contact-form">
+        @csrf
+        @if(session()->get('danger'))
+            <div class="alert alert-danger">
+                {{ session()->get('danger') }}
+            </div>
+        @endif
 
-                            <div class="col-md-6">
-                                <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
+        <div class="form-row">
+            <div class="form-field form-field--full">
+                <label for="title" class="form-label">{{ __('Заголовок') }}</label>
+                <input id="title" type="text" class="form-input @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
 
-                                @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        
-                        <div class="form-group row">
-                            <label for="text" class="col-md-4 col-form-label text-md-right">{{ __('Текст') }}</label>
-
-                            <div class="col-md-6">
-                                <textarea class="form-control @error('text') is-invalid @enderror" id="text" name="text"  required autocomplete="text"  rows="3">{{ old('text') }}</textarea>
-                                @error('text')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn--accent">
-                                    {{ __('Зберегти') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                @error('title')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
         </div>
-    </div>
+
+        <div class="form-row">
+            <div class="form-field form-field--full">
+                <label for="text" class="form-label">{{ __('Текст') }}</label>
+                <textarea class="form-textarea @error('text') is-invalid @enderror" id="text" name="text" required autocomplete="text" rows="4">{{ old('text') }}</textarea>
+                @error('text')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="form-row form-row--footer">
+            <button type="submit" class="btn btn--accent">
+                {{ __('Зберегти') }}
+            </button>
+        </div>
+    </form>
 </div>
 @endsection
