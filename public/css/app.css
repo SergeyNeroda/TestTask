@@ -10914,7 +10914,7 @@ main {
 }
 
 body {
-  background-color: #f4f5f7;
+  background-color: var(--color-bg);
 }
 
 .card {
@@ -10926,9 +10926,9 @@ footer {
 }
 
 .list-group-item {
-  background-color: #1A1A1A;
-  border-color: #2A2A2A;
-  color: #FFFFFF;
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-divider);
+  color: var(--color-text);
 }
 
 /* Login & form layout adjustments */
@@ -10946,7 +10946,7 @@ footer {
   max-width: 768px;
   min-width: 320px;
   padding: 24px;
-  background: #1a1a1a;
+  background: var(--color-bg-alt);
   border-radius: 8px;
 }
 
