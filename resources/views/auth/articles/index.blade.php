@@ -2,6 +2,10 @@
 
 @section('content')
 @include('partials.page-banner', ['title' => 'Список статтей'])
+@include('partials.breadcrumbs', ['items' => [
+    ['label' => 'Головна', 'url' => route('home.index')],
+    ['label' => 'Статті']
+]])
 <div class="site-container">
     <div class="mb-4 text-end">
         <a href="{{ route('articles.create') }}" class="btn btn--accent ml-2">Додати</a>

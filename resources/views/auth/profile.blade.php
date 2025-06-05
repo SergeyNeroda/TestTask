@@ -2,6 +2,10 @@
 
 @section('content')
 @include('partials.page-banner', ['title' => __('Деталі аккаунту')])
+@include('partials.breadcrumbs', ['items' => [
+    ['label' => 'Головна', 'url' => route('home.index')],
+    ['label' => 'Аккаунт']
+]])
 <div class="site-container">
     <div class="account-profile">
         <div class="account-profile__header">

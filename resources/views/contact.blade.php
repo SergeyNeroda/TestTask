@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<main class="contact-simple">
-    <div class="container">
-        <h1>Зворотний зв'язок</h1>
 
+@include('partials.breadcrumbs', ['items' => [
+    ['label' => 'Головна', 'url' => route('home.index')],
+    ['label' => 'Контакти']
+]])
+<main class="main">
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
