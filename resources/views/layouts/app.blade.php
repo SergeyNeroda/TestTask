@@ -105,7 +105,7 @@
                         <path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 30C8.28 30 2 23.72 2 16S8.28 2 16 2s14 6.28 14 14-6.28 14-14 14z"/>
                         <path d="M11 11h10v10H11z"/>
                     </svg>
-                    <p class="footer-copy">© 2024 FutureTech. All rights reserved.</p>
+                    <p class="footer-copy">© 2024 FutureTech. Усі права захищені.</p>
                 </div>
 
                 <div class="footer-col footer-col--links">

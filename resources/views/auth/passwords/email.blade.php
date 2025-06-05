@@ -2,11 +2,10 @@
 
 @section('content')
 @include('partials.page-banner', ['title' => __('Скидання пароля')])
-<div class="site-container">
+<div class="site-container form-centered">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Скидання пароля') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))

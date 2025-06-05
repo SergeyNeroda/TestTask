@@ -10938,7 +10938,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 0;
 }
 
 .login-page .card {
@@ -10946,13 +10946,7 @@ footer {
   max-width: 400px;
 }
 
-.login-page .card-header {
-  margin-bottom: 24px;
-  border: none;
-  background: transparent;
-  text-align: center;
-  font-size: 1.5rem;
-}
+
 
 .login-page .form-group {
   margin-bottom: 12px;
