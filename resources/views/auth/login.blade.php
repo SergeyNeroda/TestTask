@@ -1,12 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-@include('partials.page-banner', ['title' => __('Вхід')])
-<div class="site-container">
+<div class="site-container login-page">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 col-lg-5">
             <div class="card">
-                <div class="card-header">{{ __('Вхід') }}</div>
+                <h1 class="card-header">{{ __('Вхід') }}</h1>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -52,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row button-row">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn--accent">
                                     {{ __('Увійти') }}

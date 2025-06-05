@@ -10898,6 +10898,21 @@ a.text-dark:focus {
   }
 }
 
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 body {
   background-color: #f4f5f7;
 }
@@ -10908,5 +10923,43 @@ body {
 
 footer {
   font-size: 0.875rem;
+}
+
+.list-group-item {
+  background-color: #1A1A1A;
+  border-color: #2A2A2A;
+  color: #FFFFFF;
+}
+
+/* Login page adjustments */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.login-page .card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-page .card-header {
+  margin-bottom: 24px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.login-page .form-group {
+  margin-bottom: 12px;
+}
+
+.login-page .button-row {
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
