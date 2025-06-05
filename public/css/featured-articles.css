@@ -209,6 +209,17 @@
   background-color: #c74f40;
 }
 
+.latest-articles__title {
+  font-size: 24px;
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.latest-articles__footer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 /* Responsive adjustments for tablets */
 @media (max-width: 1023px) and (min-width: 768px) {
   .featured-image {
