@@ -28,19 +28,6 @@
 </head>
 <body>
     <div id="app">
-        <!-- Top Bar -->
-        <div class="top-bar">
-            <div class="site-container top-bar__inner">
-                <p class="top-bar__text">
-                    Підпишіться на нашу розсилку, щоб першими дізнаватись про нові блоги та ресурси
-                    <a href="/newsletter" class="top-bar__arrow-link" aria-label="Перейти до підписки на розсилку">
-                        <svg width="16" height="16" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 8h8M8 4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </p>
-            </div>
-        </div>
 
         <!-- Header / Navbar -->
         <x-navbar />
@@ -58,60 +45,6 @@
                     <p class="footer-copy">© 2024 FutureTech. Усі права захищені.</p>
                 </div>
 
-                <div class="footer-col footer-col--links">
-                    <p class="footer-col__heading">Головна</p>
-                    <ul class="footer-list">
-                        <li><a href="/features">Функції</a></li>
-                        <li><a href="/blogs">Блоги</a></li>
-                        <li><a href="/resources">Ресурси <span class="badge">New</span></a></li>
-                        <li><a href="/testimonials">Відгуки</a></li>
-                        <li><a href="/contact-us">Контакти</a></li>
-                        <li><a href="/newsletter">Розсилка</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col footer-col--links">
-                    <p class="footer-col__heading">Новини</p>
-                    <ul class="footer-list">
-                        <li><a href="/news/trending">Популярні історії</a></li>
-                        <li><a href="/news/featured-videos">Вибрані відео</a></li>
-                        <li><a href="/news/technology">Технології</a></li>
-                        <li><a href="/news/health">Здоров'я</a></li>
-                        <li><a href="/news/politics">Політика</a></li>
-                        <li><a href="/news/environment">Довкілля</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col footer-col--links">
-                    <p class="footer-col__heading">Блоги</p>
-                    <ul class="footer-list">
-                        <li><a href="/blogs/quantum-computing">Квантові обчислення</a></li>
-                        <li><a href="/blogs/ai-ethics">Етика ШІ</a></li>
-                        <li><a href="/blogs/space-exploration">Дослідження космосу</a></li>
-                        <li><a href="/blogs/biotechnology">Біотехнології <span class="badge">New</span></a></li>
-                        <li><a href="/blogs/renewable-energy">Відновлювана енергія</a></li>
-                        <li><a href="/blogs/biohacking">Біохакінг</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col footer-col--links">
-                    <p class="footer-col__heading">Подкасти</p>
-                    <ul class="footer-list">
-                        <li><a href="/podcasts/ai-revolution">AI Revolution</a></li>
-                        <li><a href="/podcasts/ail-talk-ai">TechTalk AI <span class="badge">New</span></a></li>
-                        <li><a href="/podcasts/ai-conversations">AI Conversations</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col footer-col--links">
-                    <p class="footer-col__heading">Ресурси</p>
-                    <ul class="footer-list">
-                        <li><a href="/resources/whitepapers">Whitepaper <span class="icon-link">→</span></a></li>
-                        <li><a href="/resources/ebooks">Ebook <span class="icon-link">→</span></a></li>
-                        <li><a href="/resources/reports">Звіти <span class="icon-link">→</span></a></li>
-                        <li><a href="/resources/research-papers">Наукові роботи <span class="icon-link">→</span></a></li>
-                    </ul>
-                </div>
             </div>
 
             <div class="site-footer__bottom container">
