@@ -106,8 +106,11 @@ main {
 .nav__auth {
   margin-left: auto;
 }
-.nav__item + .nav__item {
-  margin-left: 2rem;
+.nav__item {
+  margin-right: 1.5rem;
+}
+.nav__list .nav__item:last-child {
+  margin-right: 0;
 }
 .nav__link {
   font-family: var(--font-secondary);
@@ -130,11 +133,11 @@ main {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 .btn--accent {
-  background-color: var(--color-accent);
+  background-color: #1e90ff;
   color: var(--color-bg-alt);
 }
 .btn--accent:hover {
-  background-color: #0056b3;
+  background-color: #1c86ee;
   color: var(--color-bg-alt);
 }
 .hero {
@@ -350,8 +353,8 @@ nav.header__nav {
   nav.header__nav.nav--open {
     display: flex;
   }
-  .nav__item + .nav__item {
-    margin-left: 0;
+  .nav__item {
+    margin-right: 0;
     margin-top: 1rem;
   }
   .header__toggle {
@@ -397,6 +400,12 @@ nav.header__nav {
   background-color: var(--color-bg);
   border-color: var(--color-accent);
   box-shadow: 0 0 0 0.2rem rgba(255, 214, 0, 0.25);
+}
+.invalid-feedback {
+  color: #e3342f;
+  display: block;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
 }
 .btn-primary {
   background-color: var(--color-accent);
@@ -471,8 +480,11 @@ nav.header__nav {
   margin: 0;
   padding: 0;
 }
-.nav__item + .nav__item {
-  margin-left: 2rem;
+.nav__item {
+  margin-right: 1.5rem;
+}
+.nav__list .nav__item:last-child {
+  margin-right: 0;
 }
 .nav__link {
   font-family: var(--font-secondary);
@@ -503,11 +515,11 @@ nav.header__nav {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 .btn--accent {
-  background-color: var(--color-accent);
+  background-color: #1e90ff;
   color: var(--color-bg-alt);
 }
 .btn--accent:hover {
-  background-color: #FFB300;
+  background-color: #1c86ee;
 }
 .nav-toggle {
   display: none;
@@ -550,8 +562,8 @@ nav.header__nav {
     flex-direction: column;
     gap: 1.5rem;
   }
-  .nav__item + .nav__item {
-    margin-left: 0;
+  .nav__item {
+    margin-right: 0;
   }
 }
 
@@ -1280,6 +1292,7 @@ nav.header__nav {
 .site-footer {
   background-color: #111;
   color: #EEE;
+  border-top: 1px solid #333;
   padding-top: 60px;
   padding-bottom: 40px;
 }
@@ -1439,6 +1452,16 @@ nav.header__nav {
 .account-profile__actions {
   display: flex;
   gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .card .form-group {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .card .form-control {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {.btn,.button{font-size:1.1rem;padding-left:1rem;padding-right:1rem;} }

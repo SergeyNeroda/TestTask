@@ -30,7 +30,7 @@
         <div class="top-bar">
             <div class="site-container top-bar__inner">
                 <p class="top-bar__text">
-                    Підпишіться на нашу розсилку, щоб отримувати нові блоги та матеріали
+                    Підпишіться на нашу розсилку, щоб першими дізнаватись про нові блоги та ресурси
                     <a href="/newsletter" class="top-bar__arrow-link" aria-label="Перейти до підписки на розсилку">
                         <svg width="16" height="16" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 8h8M8 4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -50,7 +50,11 @@
                     </svg>
                     <span class="sr-only">FutureTech</span>
                 </a>
-                <button class="header__toggle" id="nav-toggle">☰</button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                    <span class="nav-toggle__bar"></span>
+                </button>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
                 <nav class="header__nav">
                     <ul class="nav__list nav__primary">
@@ -62,9 +66,9 @@
                     </ul>
                     <ul class="nav__list nav__auth">
                         @guest
-                            <li class="nav__item"><a class="nav__link" href="{{ route('login') }}">{{ __('Вхід') }}</a></li>
+                            <li class="nav__item"><a class="nav__link {{ request()->is('login') ? 'nav__link--active' : '' }}" href="{{ route('login') }}">{{ __('Вхід') }}</a></li>
                             @if (Route::has('register'))
-                                <li class="nav__item"><a class="nav__link" href="{{ route('register') }}">{{ __('Реєстрація') }}</a></li>
+                                <li class="nav__item"><a class="nav__link {{ request()->is('register') ? 'nav__link--active' : '' }}" href="{{ route('register') }}">{{ __('Реєстрація') }}</a></li>
                             @endif
                         @else
                             <li class="nav__item user-dropdown">
@@ -86,7 +90,7 @@
                         @endguest
                     </ul>
                 </nav>
-                <a href="{{ url('/contact') }}" class="btn btn--accent {{ request()->is('contact') ? 'nav__link--active' : '' }}">Контакти</a>
+                <a href="{{ url('/contact') }}" class="btn btn--accent {{ request()->is('contact') ? 'nav__link--active' : '' }}">Зв’язатися з нами</a>
             </div>
         </header>
 
