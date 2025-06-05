@@ -2,6 +2,11 @@
 
 @section('content')
 @include('partials.page-banner', ['title' => 'Авторські статті'])
+@include('partials.breadcrumbs', ['items' => [
+    ['label' => 'Головна', 'url' => route('home.index')],
+    ['label' => 'Статті', 'url' => route('articles')],
+    ['label' => 'Авторські статті']
+]])
 
 <div class="site-container">
     <div class="d-flex justify-content-between align-items-center mb-4">
