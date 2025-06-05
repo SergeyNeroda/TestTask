@@ -10931,26 +10931,32 @@ footer {
   color: #FFFFFF;
 }
 
-/* Login page adjustments */
+/* Login & form layout adjustments */
 
 .login-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0;
+  padding-top: 80px;
 }
 
 .form-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 768px;
   min-width: 320px;
   padding: 24px;
   background: #1a1a1a;
   border-radius: 8px;
 }
 
-
+.login-page .card-header {
+  margin-bottom: 24px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 1.5rem;
+}
 
 .login-page .form-group {
   margin-bottom: 12px;

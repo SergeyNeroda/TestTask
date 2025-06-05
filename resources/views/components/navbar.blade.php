@@ -9,8 +9,10 @@
     </div>
     <ul class="navbar__center" id="nav-menu">
         <x-nav-item href="/" :active="request()->is('/')">Головна</x-nav-item>
-        <x-nav-item href="/articles" :active="request()->is('articles')">Статті</x-nav-item>
-        <x-nav-item href="/account" :active="request()->is('account')">Аккаунт</x-nav-item>
+        @auth
+            <x-nav-item href="/articles" :active="request()->is('articles')">Статті</x-nav-item>
+            <x-nav-item href="/account" :active="request()->is('account')">Аккаунт</x-nav-item>
+        @endauth
     </ul>
     <div class="navbar__right">
         <x-theme-toggle />
