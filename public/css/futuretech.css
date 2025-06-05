@@ -1480,3 +1480,38 @@ nav.header__nav {
 }
 
 @media (max-width: 480px) {.btn,.button{font-size:1.1rem;padding-left:1rem;padding-right:1rem;} }
+
+/* Global UI tweaks */
+h1, h2, h3 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+section {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.btn,
+.action-button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+.btn--accent {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-centered {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

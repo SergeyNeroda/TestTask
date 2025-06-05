@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="site-container login-page">
+<div class="site-container login-page form-centered">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-5">
             <div class="card">
-                <h1 class="card-header">{{ __('Вхід') }}</h1>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

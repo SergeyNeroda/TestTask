@@ -2,11 +2,10 @@
 
 @section('content')
 @include('partials.page-banner', ['title' => __('Реєстрація')])
-<div class="site-container">
+<div class="site-container form-centered">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Реєстрація') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
