@@ -10941,9 +10941,13 @@ footer {
   padding-top: 0;
 }
 
-.login-page .card {
+.form-container {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
+  min-width: 320px;
+  padding: 24px;
+  background: #1a1a1a;
+  border-radius: 8px;
 }
 
 
