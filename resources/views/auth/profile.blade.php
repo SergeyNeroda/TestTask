@@ -9,12 +9,15 @@
             <h2 class="account-profile__nickname">{{ $auth_user->nickname }}</h2>
         </div>
 
-        <ul class="account-profile__list">
-            <li>Прізвище: {{ $auth_user->surname }}</li>
+        <dl class="account-profile__list">
+            <dt>Прізвище</dt>
+            <dd>{{ $auth_user->surname }}</dd>
             @if($auth_user->show_phone)
-                <li>Телефон: {{ $auth_user->phone }}</li>
+                <dt>Телефон</dt>
+                <dd>{{ $auth_user->phone }}</dd>
             @endif
-            <li>Стать:
+            <dt>Стать</dt>
+            <dd>
                 @if ($auth_user->sex === 'Male')
                     Чоловік
                 @elseif ($auth_user->sex === 'Female')
@@ -22,8 +25,8 @@
                 @else
                     Undefined
                 @endif
-            </li>
-        </ul>
+            </dd>
+        </dl>
 
         @if(session()->get('success'))
             <div class="alert alert-success mb-3">
@@ -39,6 +42,10 @@
         <div class="account-profile__actions">
             <a href="{{ route('users.edit') }}" class="btn btn--accent">Редагувати</a>
             <a href="{{ route('users.edit_password') }}" class="btn btn--accent">Змінити пароль</a>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn--secondary">Вийти з акаунту</button>
+            </form>
         </div>
     </div>
 </div>
