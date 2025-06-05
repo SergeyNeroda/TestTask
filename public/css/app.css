@@ -10915,6 +10915,8 @@ main {
 
 body {
   background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .card {
@@ -10967,10 +10969,13 @@ footer {
   margin-bottom: 0;
 }
 
+/* Articles filter form */
+
 .filter-form {
   display: flex;
   gap: 0.5rem;
 }
+
 .filter-form input {
   flex: 1;
 }
