@@ -45,7 +45,7 @@
           <h2 class="contact-main__title">Звʼяжіться з AI Podcasts</h2>
         </div>
         <div class="contact-main__right">
-          <form action="/submit-contact" method="POST" class="contact-form" id="contact-form">
+          <form action="/submit-contact" method="POST" class="contact-form" id="contact-form" role="form" aria-label="Форма зв'язку">
             <div class="form-row">
               <div class="form-field">
                 <label for="firstName" class="form-label">Ім'я</label>

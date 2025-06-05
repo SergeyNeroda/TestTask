@@ -18,7 +18,7 @@
                         {{ session()->get('danger') }}
                     </div>
                     @endif
-                    <form method="POST" action="{{ route('users.update_password', $user->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('users.update_password', $user->id) }}" enctype="multipart/form-data" role="form" aria-label="Змінити пароль">
                         {{--  @method('PATCH')  --}}
                         @method('PUT')
                         @csrf

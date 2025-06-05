@@ -42,7 +42,7 @@
         <div class="account-profile__actions">
             <a href="{{ route('users.edit') }}" class="btn btn--accent">Редагувати</a>
             <a href="{{ route('users.edit_password') }}" class="btn btn--accent">Змінити пароль</a>
-            <form action="{{ route('logout') }}" method="POST">
+            <form action="{{ route('logout') }}" method="POST" role="form" aria-label="Вихід">
                 @csrf
                 <button type="submit" class="btn btn--secondary">Вийти з акаунту</button>
             </form>

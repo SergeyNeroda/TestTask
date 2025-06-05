@@ -8,7 +8,7 @@
             <div class="card">
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data" role="form" aria-label="Оновити дані користувача">
                         @method('PATCH')
                         @csrf
       

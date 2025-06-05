@@ -10,7 +10,7 @@
                 <div class="card-body">
                     {{ __('Будь ласка, підтвердіть пароль перед продовженням.') }}
 
-                    <form method="POST" action="{{ route('password.confirm') }}">
+                    <form method="POST" action="{{ route('password.confirm') }}" role="form" aria-label="Підтвердження пароля">
                         @csrf
 
                         <div class="form-group row">

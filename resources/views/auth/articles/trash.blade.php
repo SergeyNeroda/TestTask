@@ -32,12 +32,12 @@
                     <h3 class="card-title">{{ $article->title }}</h3>
                     <p class="card-description">{{ \Illuminate\Support\Str::limit($article->text, 150) }}</p>
                     <div class="card-buttons">
-                        <form action="{{ route('articles.permamentdelete', $article->id)}}" method="post" style="display:inline-block;">
+                        <form action="{{ route('articles.permamentdelete', $article->id)}}" method="post" style="display:inline-block;" role="form" aria-label="Видалити остаточно">
                             @csrf
                             @method('DELETE')
                             <button class="button button--secondary" type="submit">Видалити остаточно</button>
                         </form>
-                        <form method="POST" action="{{ route('articles.restore',$article->id) }}" style="display:inline-block;">
+                        <form method="POST" action="{{ route('articles.restore',$article->id) }}" style="display:inline-block;" role="form" aria-label="Відновити статтю">
                             @method('PATCH')
                             @csrf
                             <button class="button button--primary" type="submit">Відновити</button>
