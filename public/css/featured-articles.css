@@ -2,13 +2,13 @@
 
 /* Featured block layout */
 .featured-article {
-  background-color: #0F0F0F;
+  background-color: var(--color-bg);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   margin: 40px auto 60px auto;
   padding: 20px;
   max-width: 1140px;
-  color: #FFFFFF;
+  color: var(--color-text);
 }
 
 .featured-content {
@@ -43,7 +43,7 @@
 
 .featured-subtitle {
   font-size: 16px;
-  color: #B0B0B0;
+  color: var(--color-text-muted);
   margin-bottom: 16px;
   line-height: 1.5;
 }
@@ -56,7 +56,7 @@
 }
 
 .meta-chip {
-  background-color: #1E1E1E;
+  background-color: var(--color-bg-alt);
   padding: 8px 12px;
   border-radius: 6px;
   font-size: 14px;
@@ -70,14 +70,14 @@
 }
 
 .button--primary {
-  background-color: #2A2A2A;
-  color: #FFFFFF;
+  background-color: var(--color-divider);
+  color: var(--color-text);
   padding: 10px 20px;
   border-radius: 4px;
 }
 
 .button--primary:hover {
-  background-color: #333333;
+  background-color: var(--color-divider);
 }
 
 .featured-image-wrapper {
@@ -103,7 +103,7 @@
 }
 
 .card {
-  background-color: #1E1E1E;
+  background-color: var(--color-bg-alt);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -142,7 +142,7 @@
 
 .card-description {
   font-size: 14px;
-  color: #B0B0B0;
+  color: var(--color-text-muted);
   margin: 0 0 12px 0;
   line-height: 1.4;
   flex-grow: 1;
@@ -155,8 +155,8 @@
 }
 
 .button--outline {
-  border: 1px solid #FFFFFF;
-  color: #FFFFFF;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
   background-color: transparent;
   padding: 8px 16px;
   border-radius: 4px;
@@ -186,24 +186,24 @@
 }
 
 .action-button--view {
-  background-color: #333333;
-  color: #ffffff;
+  background-color: var(--color-divider);
+  color: var(--color-text);
 }
 .action-button--view:hover {
-  background-color: #444444;
+  background-color: var(--color-divider);
 }
 
 .action-button--edit {
-  background-color: #1e90ff;
-  color: #ffffff;
+  background-color: var(--color-accent);
+  color: var(--color-bg-alt);
 }
 .action-button--edit:hover {
-  background-color: #1c86ee;
+  background-color: var(--color-accent);
 }
 
 .action-button--delete {
-  background-color: #e05c4a;
-  color: #ffffff;
+  background-color: #e76f51;
+  color: var(--color-bg-alt);
 }
 .action-button--delete:hover {
   background-color: #c74f40;
