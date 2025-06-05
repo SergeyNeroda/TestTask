@@ -16,7 +16,7 @@
         </div>
 
         <h2 class="post-section-title" id="introduction">Вступ</h2>
-        <p class="post-paragraph">{{ $article->text }}</p>
+        <div class="post-paragraph">{!! $article->text !!}</div>
     </div>
     <aside class="post-sidebar">
         <div class="post-meta-card">
