@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+@include('partials.breadcrumbs', ['items' => [
+    ['label' => 'Головна', 'url' => route('home.index')],
+    ['label' => 'Контакти']
+]])
 <main class="contact-page">
     <section class="contact-info-strip">
       <div class="site-container contact-info-strip__inner">

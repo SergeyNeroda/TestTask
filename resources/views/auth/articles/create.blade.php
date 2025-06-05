@@ -2,6 +2,11 @@
 
 @section('content')
 @include('partials.page-banner', ['title' => __('Створити статтю')])
+@include('partials.breadcrumbs', ['items' => [
+    ['label' => 'Головна', 'url' => route('home.index')],
+    ['label' => 'Статті', 'url' => route('articles')],
+    ['label' => 'Створити']
+]])
 <div class="site-container">
     <form method="POST" action="{{ route('articles.store') }}" class="contact-form" role="form" aria-label="Створення статті">
         @csrf

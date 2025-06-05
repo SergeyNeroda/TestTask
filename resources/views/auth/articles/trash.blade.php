@@ -2,6 +2,11 @@
 
 @section('content')
 @include('partials.page-banner', ['title' => 'Список видалених статтей'])
+@include('partials.breadcrumbs', ['items' => [
+    ['label' => 'Головна', 'url' => route('home.index')],
+    ['label' => 'Статті', 'url' => route('articles')],
+    ['label' => 'Видалені статті']
+]])
 <div class="site-container">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Список видалених статтей</h2>
