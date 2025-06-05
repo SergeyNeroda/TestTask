@@ -160,39 +160,5 @@
     </div>
 </section>
 
-<section class="articles-grid">
-    <article class="card">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="FutureTech Trends 2024" class="card-image">
-        <div class="card-content">
-            <h3 class="card-title">Тренди FutureTech 2024</h3>
-            <p class="card-description">Електронна книга з прогнозами технологічних трендів на наступний рік, включно з розвитком ШІ.</p>
-            <div class="card-buttons">
-                <a href="/futuretech-trends-2024" class="button button--outline">Детальніше</a>
-                <a href="/assets/futuretech-trends-2024.pdf" class="button button--secondary">Завантажити PDF</a>
-            </div>
-        </div>
-    </article>
-    <article class="card">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Space Exploration Ebook" class="card-image">
-        <div class="card-content">
-            <h3 class="card-title">Електронна книга «Дослідження космосу»</h3>
-            <p class="card-description">Електронна книга з прогнозами технологічних трендів на наступний рік, включно з розвитком ШІ.</p>
-            <div class="card-buttons">
-                <a href="/space-exploration-ebook" class="button button--outline">Детальніше</a>
-                <a href="/assets/space-exploration-ebook.pdf" class="button button--secondary">Завантажити PDF</a>
-            </div>
-        </div>
-    </article>
-    <article class="card">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Quantum Computing Whitepaper" class="card-image">
-        <div class="card-content">
-            <h3 class="card-title">Whitepaper з квантових обчислень</h3>
-            <p class="card-description">Докладний whitepaper, що досліджує принципи та застосування.</p>
-            <div class="card-buttons">
-                <a href="/quantum-computing-whitepaper" class="button button--outline">Детальніше</a>
-                <a href="/assets/quantum-computing-whitepaper.pdf" class="button button--secondary">Завантажити PDF</a>
-            </div>
-        </div>
-    </article>
-</section>
+@include('partials.latest-articles', ['articles' => $articles])
 @endsection
