@@ -5,22 +5,22 @@
 <section class="hero">
     <div class="site-container hero__inner">
         <div class="hero__content">
-            <h1 class="hero__title">Explore the Frontiers of Artificial Intelligence</h1>
+            <h1 class="hero__title">Досліджуйте межі штучного інтелекту</h1>
             <p class="hero__subtitle">
-                Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.
+                Ласкаво просимо до епіцентру інновацій ШІ. FutureTech AI News — ваш квиток у світ, де машини мислять, навчаються та формують майбутнє. Приєднуйтесь до цієї візіонерської експедиції в серце ШІ.
             </p>
             <div class="hero__stats">
                 <div class="stat-card">
                     <p class="stat-card__number">300<span class="stat-card__plus">+</span></p>
-                    <p class="stat-card__label">Resources available</p>
+                    <p class="stat-card__label">Доступних ресурсів</p>
                 </div>
                 <div class="stat-card">
                     <p class="stat-card__number">12k<span class="stat-card__plus">+</span></p>
-                    <p class="stat-card__label">Total Downloads</p>
+                    <p class="stat-card__label">Завантажень</p>
                 </div>
                 <div class="stat-card">
                     <p class="stat-card__number">10k<span class="stat-card__plus">+</span></p>
-                    <p class="stat-card__label">Active Users</p>
+                    <p class="stat-card__label">Активних користувачів</p>
                 </div>
             </div>
         </div>
@@ -32,10 +32,10 @@
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 2" class="avatar">
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Expert 3" class="avatar">
                 </div>
-                <p class="resources-widget__text">Explore 1000+ resources</p>
-                <p class="resources-widget__subtext">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
+                <p class="resources-widget__text">Досліджуйте понад 1000 ресурсів</p>
+                <p class="resources-widget__subtext">Понад 1000 статей про нові технологічні тенденції та прориви.</p>
                 <a href="/resources" class="resources-widget__btn">
-                    Explore Resources
+                    Переглянути ресурси
                     <svg width="16" height="16" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 8h8M8 4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -54,37 +54,37 @@
         </div>
 
         <div class="ft-hero__text">
-            <p class="ft-hero__tagline">Learn, Connect, and Innovate</p>
-            <h2 class="ft-hero__headline">Be Part of the Future Tech Revolution</h2>
+            <p class="ft-hero__tagline">Навчайтесь, спілкуйтесь та вдосконалюйтесь</p>
+            <h2 class="ft-hero__headline">Станьте частиною технологічної революції майбутнього</h2>
             <p class="ft-hero__subhead">
-                Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.
+                Пориньте у світ технологій майбутнього. Досліджуйте наші ресурси, спілкуйтеся з однодумцями та рухайте інновації у галузі. Долучайтеся до спільноти новаторів.
             </p>
         </div>
     </div>
 
     <div class="ft-hero__cards container">
         <div class="ft-card">
-            <h3 class="ft-card__title">Resource Access</h3>
+            <h3 class="ft-card__title">Доступ до ресурсів</h3>
             <p class="ft-card__desc">
-                Visitors can access a wide range of resources, including ebooks, whitepapers, reports.
+                Відвідувачі можуть отримати доступ до широкого спектру матеріалів, включно з електронними книгами, whitepaper та звітами.
             </p>
             <a href="/resources" class="ft-card__link">
                 <span class="ft-card__icon">→</span>
             </a>
         </div>
         <div class="ft-card">
-            <h3 class="ft-card__title">Community Forum</h3>
+            <h3 class="ft-card__title">Форум спільноти</h3>
             <p class="ft-card__desc">
-                Join our active community forum to discuss industry trends, share insights, and collaborate with peers.
+                Приєднуйтесь до активного форуму, щоб обговорювати галузеві тренди, ділитися досвідом та співпрацювати з колегами.
             </p>
             <a href="/forum" class="ft-card__link">
                 <span class="ft-card__icon">→</span>
             </a>
         </div>
         <div class="ft-card">
-            <h3 class="ft-card__title">Tech Events</h3>
+            <h3 class="ft-card__title">Технічні події</h3>
             <p class="ft-card__desc">
-                Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge.
+                Слідкуйте за анонсами технічних заходів, вебінарів і конференцій, щоб поглиблювати знання.
             </p>
             <a href="/events" class="ft-card__link">
                 <span class="ft-card__icon">→</span>
@@ -95,8 +95,8 @@
 
 <section class="features-intro">
     <div class="site-container features-intro__inner">
-        <p class="features-intro__pretitle">Unlock the Power of</p>
-        <h2 class="features-intro__title">FutureTech Features</h2>
+        <p class="features-intro__pretitle">Відкрийте силу</p>
+        <h2 class="features-intro__title">Можливості FutureTech</h2>
     </div>
 </section>
 <section class="features-strip">
@@ -108,8 +108,8 @@
                     <path d="M6 8h12M6 12h12M6 16h12" stroke="currentColor" stroke-width="2"/>
                 </svg>
             </div>
-            <h3 class="feature-card__title">Latest News Updates</h3>
-            <p class="feature-card__subtitle">Over 1,000 articles published monthly</p>
+            <h3 class="feature-card__title">Останні новини</h3>
+            <p class="feature-card__subtitle">Понад 1,000 статей щомісяця</p>
         </div>
         <div class="feature-card">
             <div class="feature-card__icon">
@@ -118,8 +118,8 @@
                     <path d="M12 10a4 4 0 100-8 4 4 0 000 8zm0 2c-4 0-6 2-6 4v2h12v-2c0-2-2-4-6-4z" stroke="currentColor" stroke-width="2" fill="none"/>
                 </svg>
             </div>
-            <h3 class="feature-card__title">Expert Contributors</h3>
-            <p class="feature-card__subtitle">50+ renowned AI experts on our team</p>
+            <h3 class="feature-card__title">Експертні автори</h3>
+            <p class="feature-card__subtitle">Понад 50 відомих фахівців з ШІ у нашій команді</p>
         </div>
         <div class="feature-card">
             <div class="feature-card__icon">
@@ -128,8 +128,8 @@
                     <path d="M2 12h20M12 2v20M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" fill="none"/>
                 </svg>
             </div>
-            <h3 class="feature-card__title">Global Readership</h3>
-            <p class="feature-card__subtitle">2 million monthly readers</p>
+            <h3 class="feature-card__title">Глобальна аудиторія</h3>
+            <p class="feature-card__subtitle">2 мільйони читачів щомісяця</p>
         </div>
     </div>
 </section>
@@ -140,14 +140,14 @@
             <a href="/" class="featured-logo">
                 <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Logo" width="40" height="40">
             </a>
-            <h1 class="featured-title">Space Exploration Whitepaper</h1>
-            <p class="featured-subtitle">An in-depth whitepaper covering the latest advancements in space exploration, including Mars missions and asteroid mining.</p>
+            <h1 class="featured-title">Білий документ з дослідження космосу</h1>
+            <p class="featured-subtitle">Докладний whitepaper про останні досягнення у дослідженні космосу, зокрема місії на Марс та видобуток астероїдів.</p>
             <div class="meta-chips">
-                <span class="meta-chip">Publication Date: September 2023</span>
-                <span class="meta-chip">Category: Space Exploration</span>
-                <span class="meta-chip">Author: FutureTech Space Division</span>
+                <span class="meta-chip">Дата публікації: вересень 2023</span>
+                <span class="meta-chip">Категорія: дослідження космосу</span>
+                <span class="meta-chip">Автор: FutureTech Space Division</span>
             </div>
-            <a href="/assets/whitepaper.pdf" class="button button--primary">Download PDF Now</a>
+            <a href="/assets/whitepaper.pdf" class="button button--primary">Завантажити PDF</a>
         </div>
         <div class="featured-image-wrapper">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Space AI" class="featured-image">
@@ -159,33 +159,33 @@
     <article class="card">
         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="FutureTech Trends 2024" class="card-image">
         <div class="card-content">
-            <h3 class="card-title">FutureTech Trends 2024</h3>
-            <p class="card-description">An ebook that predicts upcoming technology trends for the next year, including AI developments.</p>
+            <h3 class="card-title">Тренди FutureTech 2024</h3>
+            <p class="card-description">Електронна книга з прогнозами технологічних трендів на наступний рік, включно з розвитком ШІ.</p>
             <div class="card-buttons">
-                <a href="/futuretech-trends-2024" class="button button--outline">View Details</a>
-                <a href="/assets/futuretech-trends-2024.pdf" class="button button--secondary">Download PDF Now</a>
+                <a href="/futuretech-trends-2024" class="button button--outline">Детальніше</a>
+                <a href="/assets/futuretech-trends-2024.pdf" class="button button--secondary">Завантажити PDF</a>
             </div>
         </div>
     </article>
     <article class="card">
         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Space Exploration Ebook" class="card-image">
         <div class="card-content">
-            <h3 class="card-title">Space Exploration Ebook</h3>
-            <p class="card-description">An ebook that predicts upcoming technology trends for the next year, including AI developments.</p>
+            <h3 class="card-title">Електронна книга «Дослідження космосу»</h3>
+            <p class="card-description">Електронна книга з прогнозами технологічних трендів на наступний рік, включно з розвитком ШІ.</p>
             <div class="card-buttons">
-                <a href="/space-exploration-ebook" class="button button--outline">View Details</a>
-                <a href="/assets/space-exploration-ebook.pdf" class="button button--secondary">Download PDF Now</a>
+                <a href="/space-exploration-ebook" class="button button--outline">Детальніше</a>
+                <a href="/assets/space-exploration-ebook.pdf" class="button button--secondary">Завантажити PDF</a>
             </div>
         </div>
     </article>
     <article class="card">
         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Quantum Computing Whitepaper" class="card-image">
         <div class="card-content">
-            <h3 class="card-title">Quantum Computing Whitepaper</h3>
-            <p class="card-description">An in-depth whitepaper exploring the principles, applications.</p>
+            <h3 class="card-title">Whitepaper з квантових обчислень</h3>
+            <p class="card-description">Докладний whitepaper, що досліджує принципи та застосування.</p>
             <div class="card-buttons">
-                <a href="/quantum-computing-whitepaper" class="button button--outline">View Details</a>
-                <a href="/assets/quantum-computing-whitepaper.pdf" class="button button--secondary">Download PDF Now</a>
+                <a href="/quantum-computing-whitepaper" class="button button--outline">Детальніше</a>
+                <a href="/assets/quantum-computing-whitepaper.pdf" class="button button--secondary">Завантажити PDF</a>
             </div>
         </div>
     </article>
