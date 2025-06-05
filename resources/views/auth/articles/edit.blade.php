@@ -2,6 +2,11 @@
 
 @section('content')
 @include('partials.page-banner', ['title' => __('Редагувати статтю')])
+@include('partials.breadcrumbs', ['items' => [
+    ['label' => 'Головна', 'url' => route('home.index')],
+    ['label' => 'Статті', 'url' => route('articles')],
+    ['label' => 'Редагувати']
+]])
 <div class="site-container">
     <form method="POST" action="{{ route('articles.update',$article->id) }}" class="contact-form" role="form" aria-label="Редагувати статтю">
         @method('PATCH')

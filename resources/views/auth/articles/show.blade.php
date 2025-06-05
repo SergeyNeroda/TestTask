@@ -5,6 +5,11 @@
     <div class="hero-banner__overlay"></div>
     <h1 class="hero-banner__title">{{ $article->title }}</h1>
 </section>
+@include('partials.breadcrumbs', ['items' => [
+    ['label' => 'Головна', 'url' => route('home.index')],
+    ['label' => 'Статті', 'url' => route('articles')],
+    ['label' => $article->title]
+]])
 
 <div class="container post-container">
     <div class="post-content">

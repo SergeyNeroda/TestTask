@@ -2,6 +2,11 @@
 
 @section('content')
 @include('partials.page-banner', ['title' => __('Змінити пароль')])
+@include('partials.breadcrumbs', ['items' => [
+    ['label' => 'Головна', 'url' => route('home.index')],
+    ['label' => 'Аккаунт', 'url' => route('users.details')],
+    ['label' => 'Змінити пароль']
+]])
 <div class="site-container form-centered">
     <div class="row justify-content-center">
         <div class="col-md-8">
