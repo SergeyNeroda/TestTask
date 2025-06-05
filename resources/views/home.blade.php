@@ -7,7 +7,7 @@
         <div class="hero__content">
             <h1 class="hero__title">Досліджуйте межі штучного інтелекту</h1>
             <p class="hero__subtitle">
-                Ласкаво просимо до епіцентру інновацій ШІ. FutureTech AI News — ваш квиток у світ, де машини мислять, навчаються та формують майбутнє. Приєднуйтесь до цієї візіонерської експедиції в серце ШІ.
+                Ласкаво просимо до епіцентру інновацій ШІ. FutureTech AI News відкриває світ мислячих машин. Приєднуйтесь до подорожі в майбутнє.
             </p>
             <div class="hero__stats">
                 <div class="stat-card">
@@ -56,9 +56,11 @@
         <div class="ft-hero__text">
             <p class="ft-hero__tagline">Навчайтесь, спілкуйтесь та вдосконалюйтесь</p>
             <h2 class="ft-hero__headline">Станьте частиною технологічної революції майбутнього</h2>
-            <p class="ft-hero__subhead">
-                Пориньте у світ технологій майбутнього. Досліджуйте наші ресурси, спілкуйтеся з однодумцями та рухайте інновації у галузі. Долучайтеся до спільноти новаторів.
-            </p>
+            <ul class="ft-hero__bullets">
+                <li>Досліджуйте наші ресурси</li>
+                <li>Спілкуйтеся з однодумцями</li>
+                <li>Розвивайте інновації</li>
+            </ul>
         </div>
     </div>
 
@@ -93,14 +95,15 @@
     </div>
 </section>
 
-<section class="features-intro">
-    <div class="site-container features-intro__inner">
-        <p class="features-intro__pretitle">Відкрийте силу</p>
-        <h2 class="features-intro__title">Можливості FutureTech</h2>
+<section class="advantages">
+    <div class="features-intro">
+        <div class="site-container features-intro__inner">
+            <p class="features-intro__pretitle">Наші переваги</p>
+            <h2 class="features-intro__title">Чому обирають FutureTech</h2>
+        </div>
     </div>
-</section>
-<section class="features-strip">
-    <div class="site-container features-strip__inner">
+    <section class="features-strip">
+        <div class="site-container features-strip__inner">
         <div class="feature-card">
             <div class="feature-card__icon">
                 <svg width="24" height="24" fill="var(--color-accent)" xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +134,7 @@
             <h3 class="feature-card__title">Глобальна аудиторія</h3>
             <p class="feature-card__subtitle">2 мільйони читачів щомісяця</p>
         </div>
-    </div>
+    </section>
 </section>
 
 <section class="featured-article">
@@ -140,14 +143,16 @@
             <a href="/" class="featured-logo">
                 <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Logo" width="40" height="40">
             </a>
-            <h1 class="featured-title">Білий документ з дослідження космосу</h1>
+            <div class="featured-title-wrapper">
+                <h1 class="featured-title">Білий документ з дослідження космосу</h1>
+                <a href="/assets/whitepaper.pdf" class="button button--primary featured-download">Завантажити PDF</a>
+            </div>
             <p class="featured-subtitle">Докладний whitepaper про останні досягнення у дослідженні космосу, зокрема місії на Марс та видобуток астероїдів.</p>
             <div class="meta-chips">
                 <span class="meta-chip">Дата публікації: вересень 2023</span>
                 <span class="meta-chip">Категорія: дослідження космосу</span>
                 <span class="meta-chip">Автор: FutureTech Space Division</span>
             </div>
-            <a href="/assets/whitepaper.pdf" class="button button--primary">Завантажити PDF</a>
         </div>
         <div class="featured-image-wrapper">
             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100%25' height='100%25' fill='%23ccc'/%3E%3C/svg%3E" alt="Space AI" class="featured-image">

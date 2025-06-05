@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-@include('partials.page-banner', ['title' => 'Podcasts'])
+@include('partials.page-banner', ['title' => 'Подкасти'])
 @endsection
