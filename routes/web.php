@@ -25,7 +25,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::view('/news', 'news')->name('news');
     Route::view('/podcasts', 'podcasts')->name('podcasts');
     Route::view('/resources', 'resources')->name('resources');
-    Route::view('/contact', 'contact')->name('contact');
+    Route::get('/contact', ['uses' => 'ContactController@showForm', 'as' => 'contact']);
+    Route::post('/contact', ['uses' => 'ContactController@store', 'as' => 'contact.store']);
 
     Route::group(['middleware' => ['auth']], function () {
 
