@@ -11,15 +11,15 @@
             </p>
             <div class="hero__stats">
                 <div class="stat-card">
-                    <p class="stat-card__number">300<span class="stat-card__plus">+</span></p>
+                    <p class="stat-card__number">{{ $resourcesCount }}</p>
                     <p class="stat-card__label">Доступних ресурсів</p>
                 </div>
                 <div class="stat-card">
-                    <p class="stat-card__number">12k<span class="stat-card__plus">+</span></p>
+                    <p class="stat-card__number">{{ $downloadsCount }}</p>
                     <p class="stat-card__label">Завантажень</p>
                 </div>
                 <div class="stat-card">
-                    <p class="stat-card__number">10k<span class="stat-card__plus">+</span></p>
+                    <p class="stat-card__number">{{ $usersCount }}</p>
                     <p class="stat-card__label">Активних користувачів</p>
                 </div>
             </div>
