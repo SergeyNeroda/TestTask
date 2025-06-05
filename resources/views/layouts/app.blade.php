@@ -166,6 +166,12 @@
 
             <div class="site-footer__bottom container">
                 <p class="footer-bottom__links">
+                    <a href="/about">Про нас</a>
+                    <span class="footer-separator">|</span>
+                    <a href="/contact">Контакти</a>
+                    <span class="footer-separator">|</span>
+                    <a href="/support">Підтримка</a>
+                    <span class="footer-separator">|</span>
                     <a href="/terms-and-conditions">Умови користування</a>
                     <span class="footer-separator">|</span>
                     <a href="/privacy-policy">Політика конфіденційності</a>
